@@ -1,7 +1,7 @@
-# Lab: Binary Search Tree
+# Binary Search Tree
 
-In this lab we implement the Search algorithm for Binary Search Trees
-and prove that it is correct.
+In this assignment we implement the Search algorithm for Binary Search
+Trees and prove that it is correct.
 
 We define a binary tree in Deduce as follows.
 
@@ -18,7 +18,7 @@ its mapping from keys to values. Here we make use of the `update` and
 `combine` functions from the library `lib/Maps.pf`.
 
 ```
-function BST_map(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
+recursive BST_map(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
   BST_map(EmptyTree) = @empty_map<Nat,Nat>
   BST_map(TreeNode(L, kv, R)) =
     update(combine(BST_map(L), BST_map(R)), first(kv), just(second(kv)))
@@ -35,7 +35,7 @@ the height of the tree. (`BST_map` is linear in the size of the tree,
 which is much worse.)
 
 ```
-function BST_search(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
+recursive BST_search(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
   FILL ME IN
 }
 ```
@@ -46,7 +46,7 @@ Next we formalize the Binary Search Tree Property.  First we define
 the following auxilliary function that returns all the keys in a tree.
 
 ```
-function BST_keys(Tree<Pair<Nat,Nat>>) -> Set<Nat> {
+recursive BST_keys(Tree<Pair<Nat,Nat>>) -> Set<Nat> {
   BST_keys(EmptyTree) = ∅
   BST_keys(TreeNode(L,kv,R)) = single(first(kv)) ∪ BST_keys(L) ∪ BST_keys(R)
 }
@@ -58,7 +58,7 @@ all the keys in the right subtree. Here's a formulation of this as a
 recursive function.
 
 ```
-function is_BST(Tree<Pair<Nat,Nat>>) -> bool {
+recursive is_BST(Tree<Pair<Nat,Nat>>) -> bool {
   is_BST(EmptyTree) = true
   is_BST(TreeNode(L, kv, R)) =
     (all l:Nat. if l ∈ BST_keys(L) then l < first(kv))

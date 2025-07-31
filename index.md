@@ -94,7 +94,7 @@ Oct. 15 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs
 Oct. 17 | | | Lab: [Linked Lists in Deduce](./LabDeduceProg)
 Oct. 20 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
 Oct. 22 | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) |            | Homework: Proof Drills
-Oct. 24 | | | Lab: Hash Table
+Oct. 24 | | | Lab: [Hash Table](./LabHashTable.md)
 Oct. 27 | [Heaps and Priority Queues](./lectures/heaps.md) | Ch. 6 sec. 1-4,9
 Oct. 29 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md) |                | Homework: [Proof Exercises](./ProofExercises.md)
 Oct. 31 | | | Lab: Heap
@@ -102,16 +102,16 @@ Nov. 3  | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) | Ch. 9 se
 Nov. 5  | [Depth-first Search](./lectures/dfs.md)                     | Ch. 9 sec. 6   | Homework: [Quick Reverse Correct](./QuickReverse.md)
 Nov. 7  |  | | Lab: Connected Components
 Nov. 10 | [Shortest Paths](./lectures/shortest-paths.md)              | Ch. 9 sec. 3
-Nov. 12 | [Union Find](./lectures/union-find.md) and [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 8, Ch. 9 sec. 5 | Homework: List Search Correct
+Nov. 12 | [Union Find](./lectures/union-find.md) and [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 8, Ch. 9 sec. 5 | Homework: [List Search Correct](./ListSearch.md)
 Nov. 14 | | | Project: [Routing Wires](./RoutingWires)
 Nov. 17 | [Backtracking](./lectures/backtracking.md)                  | Ch. 10 sec. 5
-Nov. 19 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3 | | Homework: Insertion Sort Correct
+Nov. 19 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3 | Homework: Insertion Sort Correct
 Nov. 21 | | | Lab: work on Routing Wires
 Nov. 24-28 | **Thanksgiving**
 Dec. 1  | [DNA Alignment](./lectures/DNA-alignment.md)
-Dec. 3  | [More Dynamic Programming](./lectures/more-dynamic-programming.md)  | | Homework: BST Search Correct
+Dec. 3  | [More Dynamic Programming](./lectures/more-dynamic-programming.md)  | | Homework: [BST Correct](./LabBinarySearchTree)
 Dec. 5  | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md)
-Dec. 8  |
+Dec. 8  | Code Review
 Dec. 10 | Review for Final Exam
 Dec. 12 | 
 Dec. 15-19 | **Final Exam Week**
