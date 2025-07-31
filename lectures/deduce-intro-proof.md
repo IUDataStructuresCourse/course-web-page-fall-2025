@@ -2,29 +2,38 @@
 
 Concepts:
 * [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement
-* [`definition`](https://jsiek.github.io/deduce/pages/reference.html#definition-proof) proof
+* [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) proof
 
 Example:
 ```{.deduce^#len_empty}
 theorem len_empty: 0 = len(Empty)
 proof
-  definition len
+  expand len.
 end
 ```
 
 Concepts:
 * [`all`](https://jsiek.github.io/deduce/pages/reference.html#all-universal-quantifier) formula,
 * [`arbitrary`](https://jsiek.github.io/deduce/pages/reference.html#arbitrary-forall-introduction) proof,
-* [`suffices`](https://jsiek.github.io/deduce/pages/reference.html#suffices-proof-statement) proof, and
-* [`evaluate`](https://jsiek.github.io/deduce/pages/reference.html#evaluate-proof) proof.
 
 Example:
 ```{.deduce^#len_one}
-theorem len_one: all x:Nat. len(Node(x, Empty)) = 1
+theorem len_one: all x:UInt. len(Node(x, Empty)) = 1
 proof
-  arbitrary x:Nat
-  suffices 1 + 0 = 1 by definition {len, len}
-  evaluate
+  arbitrary x:UInt
+  expand len | len.
+end
+```
+
+Concepts:
+* [proof instantiation](https://jsiek.github.io/deduce/pages/reference.html#instantiation-proof)
+* [`replace`](https://jsiek.github.io/deduce/pages/reference.html#replace-proof)
+
+Example:
+```{.deduce^#len_42}
+theorem len_42:  1 = len(Node(42, Empty))
+proof
+  replace len_one[42].
 end
 ```
 
@@ -32,12 +41,23 @@ end
 
 <!--
 ```{.deduce^file=DeduceIntroProof.pf}
-import Nat
+import UInt
 import DeduceProgramming1
 import Set
 
 <<len_empty>>
 <<len_one>>
+<<len_42>>
 ```
 -->
 
+
+
+
+<!--
+Defer to later:
+
+* [`suffices`](https://jsiek.github.io/deduce/pages/reference.html#suffices-proof-statement) proof
+* [`evaluate`](https://jsiek.github.io/deduce/pages/reference.html#evaluate-proof) proof.
+
+-->

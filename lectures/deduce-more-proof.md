@@ -1,30 +1,18 @@
 Concepts:
-* [proof instantiation](https://jsiek.github.io/deduce/pages/reference.html#instantiation-proof)
-* [`rewrite`](https://jsiek.github.io/deduce/pages/reference.html#rewrite-proof)
-
-Example:
-```{.deduce^#len_42}
-theorem len_42:  1 = len(Node(42, Empty))
-proof
-  rewrite len_one[42]
-end
-```
-
-Concepts:
-* Library of theorems about natural numbers (`lib/Nat.thm`)
+* Library of theorems about unsigned integers (`lib/UInt.thm`)
 * [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
 
 Example:
 ```{.deduce^#algebra_example}
-theorem algebra_example: all x:Nat. (1 + x) * x = x * x + x
+theorem algebra_example: all x:UInt. (1 + x) * x = x * x + x
 proof
-  arbitrary x:Nat
+  arbitrary x:UInt
   equations
         (1 + x) * x
-      = x * (1 + x)        by mult_commute
-  ... = x * 1 + x * x      by dist_mult_add
-  ... = x * x + x * 1      by add_commute
-  ... = x * x + x          by rewrite mult_one
+      = x * (1 + x)        by uint_mult_commute
+  ... = x * 1 + x * x      by replace uint_dist_mult_add.
+  ... = x * x + x * 1      by uint_add_commute
+  ... = x * x + x          by .
 end
 ```
 
@@ -57,40 +45,40 @@ Concepts:
 * [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
 * [`recall`](https://jsiek.github.io/deduce/pages/reference.html#recall-proof) proof
 
-From `lib/Nat.thm`:
+From `lib/UInt.thm`:
 ```
-max_equal_greater_right: all x:Nat, y:Nat. if x ≤ y then max(x, y) = y
+max_equal_greater_right: all x:UInt, y:UInt. if x ≤ y then max(x, y) = y
 ```
 
 Example:
 ```{.deduce^#modus_ponens_example}
-theorem modus_ponens_example: all x:Nat. max(x, 1 + x) = 1 + x
+theorem modus_ponens_example: all x:UInt. max(x, 1 + x) = 1 + x
 proof
-  arbitrary x:Nat
-  have: x ≤ 1 + x   by less_equal_add_left
-  conclude max(x, 1 + x) = 1 + x  by apply max_equal_greater_right to recall x ≤ 1 + x
+  arbitrary x:UInt
+  have: x ≤ 1 + x   by uint_less_equal_add_left
+  conclude max(x, 1 + x) = 1 + x  by apply uint_max_equal_greater_right to recall x ≤ 1 + x
 end
 ```
 
 Concepts:
 * [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume) proof
 * [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
-* [`rewrite`-`in`](https://jsiek.github.io/deduce/pages/reference.html#rewrite-in-proof)
-* [`definition`-`in`](https://jsiek.github.io/deduce/pages/reference.html#definition-in-proof)
+* [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
+* [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
 
 Example:
 ```{.deduce^#assume_example}
-theorem assume_example: all xs:NatList. if len(xs) = 0 then xs = Empty
+theorem assume_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
 proof
-  arbitrary xs:NatList
+  arbitrary xs:UIntList
   assume premise: len(xs) = 0
   switch xs {
     case Empty {
       .
     }
     case Node(x, xs') assume xs_node: xs = Node(x, xs') {
-      have len_zero: len(Node(x, xs')) = 0 by rewrite xs_node in premise
-      conclude false by definition {len, operator+} in len_zero
+      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
+      conclude false by expand len in len_zero
     }
   }
 end
@@ -107,26 +95,25 @@ proof
   arbitrary U:type
   induction List<U>
   case [] {
-    conclude @[]<U> ++ [] = []  by definition operator++
+    conclude @[]<U> ++ [] = []  by expand operator++.
   }
   case node(n, xs') assume IH: xs' ++ [] = xs' {
     equations
           node(n, xs') ++ []
-        = node(n, xs' ++ [])    by definition operator++
-    ... = node(n, xs')          by rewrite IH
+        = node(n, xs' ++ [])    by expand operator++.
+    ... = node(n, xs')          by replace IH.
   }
 end
 ```
 
 <!--
 ```{.deduce^file=DeduceIntroProof2.pf}
-import Nat
+import UInt
 import DeduceProgramming1
 import DeduceIntroProof
 import Set
 import List
 
-<<len_42>>
 <<algebra_example>>
 <<modus_ponens_example>>
 <<assume_example>>
