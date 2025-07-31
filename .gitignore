@@ -1,3 +1,5 @@
 lectures/*.en
 lectures/.entangled/*
 lectures/*.thm
+lectures/*~
+*~
