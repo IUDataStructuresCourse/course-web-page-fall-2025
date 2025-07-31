@@ -8,7 +8,7 @@ following file that you should `import`.
 You will also need to import the following files from Deduce's library.
 
 ```
-import Nat
+import UInt
 import List
 import Pair
 import Option
@@ -16,7 +16,7 @@ import Set
 ```
 
 ```
-theorem search_correct: all y: Nat. all xs: List<Nat>.
+theorem search_correct: all y: UInt. all xs: List<UInt>.
     define front = first(search(xs, y));
     define back = second(search(xs, y));
     (back = [] or head(back) = just(y)) and

@@ -72,44 +72,44 @@ Aug. 25 | [Introduction](./lectures/introduction.md)                |           
 Aug. 27 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch.1           |                           |
 Aug. 29 |                                                           |                | [Lab: Array Search and Testing](./Search) |
 Sep. 1  | **Labor Day** (no class)
-Sep. 3  | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch.2           | Homework: 
+Sep. 3  | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch.2           | 
 Sep. 5  |                                                           |                | [Project: FloodIt!](./flood-it)
 Sep. 8  | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md)  |       | 
-Sep. 10 | [Linked Lists and Abstract Data Types](./lectures/Sep-6.md) | Ch. 3 sec. 1-5 | Homework: about big-O
+Sep. 10 | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 | Homework: about big-O
 Sep. 12 |                                                           |                | Lab: Merge Sort on Linked Lists
 Sep. 15 | [Sorting: Insertion, Merge, Quick](./lectures/sorting.md) | Ch.7 Sec.2,6,7 | 
-Sep. 17 | [Sorting in Linear Time](./lectures/sort-linear.md)       | Ch. 7 Sec.11   | Homework: 
+Sep. 17 | [Sorting in Linear Time](./lectures/sort-linear.md)       | Ch. 7 Sec.11   | Homework: about algo. analysis
 Sep. 19 |                                                           |                | Lab: Generic Quicksort
 Sep. 22 | [Binary Trees](./lectures/binary-trees.md)                | Ch.4 Sec.1,2    
-Sep. 24 | [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch. 4 Sec. 3 | Homework: 
+Sep. 24 | [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch. 4 Sec. 3 | Homework: about sorting
 Sep. 26 |                                                           |                | Project: Segment Intersection (BST)
 Sep. 29 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 
-Oct. 1  | [More AVL](./lectures/more-avl-trees.md)                  |                | Homework: 
+Oct. 1  | [More AVL](./lectures/more-avl-trees.md)                  |                | Homework: about binary trees
 Oct. 3  |                                                           |                | Project: Segment Intersection (AVL)
 Oct. 6  | Review for Midterm Exam
 Oct. 8  | **Midterm Exam**
 Oct. 10 | **Fall Break**
 Oct. 13 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html)
-Oct. 15 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) | Homework:
+Oct. 15 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) | 
 Oct. 17 | | | Lab: [Linked Lists in Deduce](./LabDeduceProg)
 Oct. 20 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
-Oct. 22 | | | Homework:
+Oct. 22 | | | Homework: Proof Drills
 Oct. 24 | | | Lab: Hash Table
 Oct. 27 |
-Oct. 29 | | | Homework:
+Oct. 29 | | | Homework: [Proof Exercises](./ProofExercises.md)
 Oct. 31 | | | Lab: Heap
 Nov. 3  |
-Nov. 5  | | | Homework:
+Nov. 5  | | | Homework: [Quick Reverse Correct](./QuickReverse.md)
 Nov. 7  | | | Lab: Connected Components
 Nov. 10 |
-Nov. 12 | | | Homework:
+Nov. 12 | | | Homework: List Search Correct
 Nov. 14 | | | Project: [Routing Wires](./RoutingWires)
 Nov. 17 |
-Nov. 19 | | | Homework:
+Nov. 19 | | | Homework: Insertion Sort Correct
 Nov. 21 | | | Lab: work on Routing Wires
 Nov. 24-28 | **Thanksgiving**
 Dec. 1  |
-Dec. 3  | | | Homework:
+Dec. 3  | | | Homework: BST Search Correct
 Dec. 5  | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md)
 Dec. 8  |
 Dec. 10 | Review for Final Exam

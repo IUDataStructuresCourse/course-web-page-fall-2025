@@ -1,8 +1,8 @@
-import Nat
+import UInt
 import List
 import Pair
 
-function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
+recursive search(List<UInt>, UInt) -> Pair<List<UInt>, List<UInt> > {
   search([], y) = pair([], [])
   search(node(x, xs), y) = 
     if x = y then

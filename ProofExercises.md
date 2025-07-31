@@ -32,11 +32,11 @@ end
 ```
 
 (3) Prove the following theorem using the `add_zero` and `mult_one`
-theorems from `lib/Nat.pf`.
+theorems from `lib/UInt.pf`.
 
-```{.deduce^#x_0_x_eq_2_x}
-theorem x_0_x_eq_2_x: 
-  all x:Nat. (x + 0) + x = (x + x) * 1
+```{.deduce^#uint_equation_ex}
+theorem uint_equation_ex: 
+  all x:UInt, y:UInt, z:UInt. x * z + y + x * z = (x + x) * z + y
 proof
   ?
 end
@@ -47,20 +47,20 @@ end
 Hint: you will need to use the `induction` and `switch` proof statements.
 
 ```{.deduce^#length_take}
-theorem length_take: all T:type. all n:Nat, xs:List<T>.
+theorem length_take: all T:type. all n:UInt, xs:List<T>.
   if n ≤ length(xs)
-  then length(take(n, xs)) = n
+  then length(take(xs, n)) = n
 proof
   ?
 end
 ```
 
-(5) Using the `rewrite`-`in` statement, prove the following variation
+(5) Using the `replace`-`in` statement, prove the following variation
 on the transitivity theorem for `≤`. Prove that if `y = x` and 
 `y ≤ z`, then `x ≤ z`.
 
 ```{.deduce^#equal_less_trans}
-theorem equal_less_trans: all x:Nat, y:Nat, z:Nat.
+theorem equal_less_trans: all x:UInt, y:UInt, z:UInt.
   if y = x and y ≤ z then x ≤ z
 proof
   ?
@@ -68,12 +68,12 @@ end
 ```
 
 (6) Prove that adding two odd numbers yields an even number.  The
-definition of `Odd` and `Even` are in `lib/Nat.pf`.  Hint: use the
+definition of `Odd` and `Even` are in `lib/UInt.pf`.  Hint: use the
 `obtain`, `choose`, and `equations` proof statements. Hint: [this similar 
 proof](https://jsiek.github.io/deduce/pages/deduce-proofs.html#reasoning-about-some-exists-and-asking-for-help) could be a helpful resource to get started.
 
 ```{.deduce^#addition_of_odds}
-theorem addition_of_odds: all x:Nat, y:Nat. 
+theorem addition_of_odds: all x:UInt, y:UInt. 
   if Odd(x) and Odd(y) then Even(x + y)
 proof
   ?
