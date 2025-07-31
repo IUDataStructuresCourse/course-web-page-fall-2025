@@ -94,9 +94,9 @@ that represents the sequence `7, 4, 5`.
 ```
 
 
-In Deduce we can define the type of linked lists of natural numbers
-with the following `union` type. (`UInt` is the type of unsigned integers
-and is defined in `lib/UInt.pf`.)
+In Deduce we can define the type of linked lists of numbers with the
+following `union` type. (`UInt` is the type of unsigned integers and
+is defined in `lib/UInt.pf`.)
 
 ```{.deduce^#UIntList}
 union UIntList {
