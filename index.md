@@ -67,22 +67,62 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 
 **Schedule**
 
-Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
-Aug. 25 | [Introduction](./lectures/introduction.md)                |              |                           |
-Aug. 27 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |                           |
-Aug. 29 |                                                           |              | [Lab: Array Search and Testing](./Search) |
+Day     | Lecture Topic                                             | Reading Due    | Assignments and Due Dates | Link
+Aug. 25 | [Introduction](./lectures/introduction.md)                |                |                           |
+Aug. 27 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch.1           |                           |
+Aug. 29 |                                                           |                | [Lab: Array Search and Testing](./Search) |
 Sep. 1  | **Labor Day** (no class)
-Sep. 3  | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | 
-Sep. 5  |                                                           |              | [Project: FloodIt!](./flood-it)
-Sep. 8  | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md)
-Sep. 10 | [Algorithm Analysis](./lectures/algo-analysis.md)
-Sep. 12 | 
-Sep. 15 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
-Sep. 17 |
-Sep. 19 |
-Sep. 22 |
-Sep. 24 |
-Sep. 26 |
+Sep. 3  | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch.2           | Homework: 
+Sep. 5  |                                                           |                | [Project: FloodIt!](./flood-it)
+Sep. 8  | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md)  |       | 
+Sep. 10 | [Sorting: Insertion, Merge, Quick](./lectures/sorting.md) | Ch.7 Sec.2,6,7 | Homework: about big-O
+Sep. 12 |                                                           |                | Lab: Merge Sort on Linked Lists
+Sep. 15 | [Binary Trees](./lectures/binary-trees.md)                | Ch.4 Sec.1,2   | 
+Sep. 17 | [Binary Search Trees](./lectures/binary-search-trees.md)  | Ch. 4 Sec. 3   | Homework: 
+Sep. 19 |                                                           |                | Project: Segment Intersection, Part 1
+Sep. 22 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 | 
+Sep. 24 | [More AVL](./lectures/more-avl-trees.md)                  |                | Homework: 
+Sep. 26 |                                                           |                | Project: Segment Intersection, Part 2
+Sep. 29 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html)
+Oct. 1  | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html)
+Oct. 3  |                                                           |                | [Lab: Linked Lists in Deduce](./LabDeduceProg)
+Oct. 6  | Review for Midterm Exam
+Oct. 8  | **Midterm Exam**
+Oct. 10 | **Fall Break**
+Oct. 13 | 
+Oct. 15 | | | Homework:
+Oct. 17 | | | Lab:
+Oct. 20 |
+Oct. 22 | | | Homework:
+Oct. 24 | | | Lab:
+Oct. 27 |
+Oct. 29 | | | Homework:
+Oct. 31 | | | Lab: 
+Nov. 3  |
+Nov. 5  | | | Homework:
+Nov. 7  | | | Lab: 
+Nov. 10 |
+Nov. 12 | | | Homework:
+Nov. 14 | | | Project: [Routing Wires](./RoutingWires)
+Nov. 17 |
+Nov. 19 | | | Homework:
+Nov. 21 | | | Lab: work on Routing Wires
+Nov. 24-28 | **Thanksgiving**
+Dec. 1  |
+Dec. 3  | | | Homework:
+Dec. 5  | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md)
+Dec. 8  |
+Dec. 10 | Review for Final Exam
+Dec. 12 | 
+Dec. 15-19 | **Final Exam Week**
+
+<!--
+
+
+[More Proof Techniques, Induction](./lectures/deduce-more-proof.md)      
+
+-->
+
 
 <!--
 Jan. 14 | [Introduction](./lectures/introduction.md)                |              |         |
