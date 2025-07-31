@@ -78,13 +78,13 @@ Sep. 8  | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md)  |  
 Sep. 10 | [Linked Lists and Abstract Data Types](./lectures/Sep-6.md) | Ch. 3 sec. 1-5 | Homework: about big-O
 Sep. 12 |                                                           |                | Lab: Merge Sort on Linked Lists
 Sep. 15 | [Sorting: Insertion, Merge, Quick](./lectures/sorting.md) | Ch.7 Sec.2,6,7 | 
-Sep. 17 | [Binary Trees](./lectures/binary-trees.md)                | Ch.4 Sec.1,2   | Homework: 
-Sep. 19 |                                                           |                | Lab: ??
-Sep. 22 | [Binary Search Trees (BST)](./lectures/binary-search-trees.md)  | Ch. 4 Sec. 3   | 
-Sep. 24 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 |                | Homework: 
+Sep. 17 | [Sorting in Linear Time](./lectures/sort-linear.md)       | Ch. 7 Sec.11   | Homework: 
+Sep. 19 |                                                           |                | Lab: Generic Quicksort
+Sep. 22 | [Binary Trees](./lectures/binary-trees.md)                | Ch.4 Sec.1,2    
+Sep. 24 | [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch. 4 Sec. 3 | Homework: 
 Sep. 26 |                                                           |                | Project: Segment Intersection (BST)
-Sep. 29 | [More AVL](./lectures/more-avl-trees.md)  
-Oct. 1  |  | Homework: 
+Sep. 29 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 
+Oct. 1  | [More AVL](./lectures/more-avl-trees.md)                  |                | Homework: 
 Oct. 3  |                                                           |                | Project: Segment Intersection (AVL)
 Oct. 6  | Review for Midterm Exam
 Oct. 8  | **Midterm Exam**
@@ -92,7 +92,7 @@ Oct. 10 | **Fall Break**
 Oct. 13 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html)
 Oct. 15 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) | Homework:
 Oct. 17 | | | Lab: [Linked Lists in Deduce](./LabDeduceProg)
-Oct. 20 |
+Oct. 20 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
 Oct. 22 | | | Homework:
 Oct. 24 | | | Lab: Hash Table
 Oct. 27 |
