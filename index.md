@@ -97,15 +97,15 @@ Oct. 22 | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) |     
 Oct. 24 | | | Lab: [Hash Table](./LabHashTable.md)
 Oct. 27 | [Heaps and Priority Queues](./lectures/heaps.md) | Ch. 6 sec. 1-4,9
 Oct. 29 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md) |                | Homework: [Proof Exercises](./ProofExercises.md)
-Oct. 31 | | | Lab: Heap
+Oct. 31 | | | Lab: [Heap](./Heap.md)
 Nov. 3  | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) | Ch. 9 sec. 1,3 |
 Nov. 5  | [Depth-first Search](./lectures/dfs.md)                     | Ch. 9 sec. 6   | Homework: [Quick Reverse Correct](./QuickReverse.md)
-Nov. 7  |  | | Lab: Connected Components
+Nov. 7  |  | | Lab: [Connected Components](./ConnectedComponents.md)
 Nov. 10 | [Shortest Paths](./lectures/shortest-paths.md)              | Ch. 9 sec. 3
 Nov. 12 | [Union Find](./lectures/union-find.md) and [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 8, Ch. 9 sec. 5 | Homework: [List Search Correct](./ListSearch.md)
 Nov. 14 | | | Project: [Routing Wires](./RoutingWires)
 Nov. 17 | [Backtracking](./lectures/backtracking.md)                  | Ch. 10 sec. 5
-Nov. 19 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3 | Homework: Insertion Sort Correct
+Nov. 19 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3 | Homework: [Insertion Sort Correct](./LabInsertionSort.md)
 Nov. 21 | | | Lab: work on Routing Wires
 Nov. 24-28 | **Thanksgiving**
 Dec. 1  | [DNA Alignment](./lectures/DNA-alignment.md)
