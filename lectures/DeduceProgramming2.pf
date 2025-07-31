@@ -85,9 +85,11 @@ assert first(pair(3,7)) = 3
 assert second(pair(3,7)) = 7
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#swap>>[init] */
-define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
+fun swap<T, U>(p:Pair<T,U>) {
+  pair(second(p), first(p))
+}
 
 assert first(swap(pair(1,2))) = 2
-assert second(swap(pair(1,2))) = 1
+assert first(swap(pair(true,false))) = false
 /* ~/~ end */
 /* ~/~ end */
