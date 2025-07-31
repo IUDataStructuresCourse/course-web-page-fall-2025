@@ -95,20 +95,20 @@ that represents the sequence `7, 4, 5`.
 
 
 In Deduce we can define the type of linked lists of natural numbers
-with the following `union` type. (`Nat` is the type of natural numbers
-and is defined in `lib/Nat.pf`.)
+with the following `union` type. (`UInt` is the type of unsigned integers
+and is defined in `lib/UInt.pf`.)
 
-```{.deduce^#NatList}
-union NatList {
+```{.deduce^#UIntList}
+union UIntList {
   Empty
-  Node(Nat, NatList)
+  Node(UInt, UIntList)
 }
 ```
 
 Then we can create the linked list for `7, 4, 5` with the following
 statement that creates three nodes.
 
-```{.deduce^#NatListL}
+```{.deduce^#UIntListL}
 define L = Node(7, Node(4, Node(5, Empty)))
 ```
 
@@ -120,7 +120,7 @@ list that starts with a node is one more than the length of the list
 starting at the next node.
 
 ```{.deduce^#len}
-function len(NatList) -> Nat {
+recursive len(UIntList) -> UInt {
   len(Empty) = 0
   len(Node(n, next)) = 1 + len(next)
 }
@@ -145,7 +145,7 @@ always terminate.
 ## Generic Unions
 
 One often needs to create lists with other kinds of elements, not just
-`Nat`.  Thus, Deduce supports generic unions. Here is the generic
+`UInt`.  Thus, Deduce supports generic unions. Here is the generic
 `List` type defined in `lib/List.pf`.
 
 ```{.deduce^#List}
@@ -159,7 +159,7 @@ For example, the sequence of numbers `1, 2, 3` is represented
 by the following linked list.
 
 ```{.deduce^#List123}
-define list_123 : List<Nat> = node(1, node(2, node(3, empty)))
+define list_123 : List<UInt> = node(1, node(2, node(3, empty)))
 ```
 
 As shorthand for a sequence of `node` with `empty` at the end, there
@@ -180,7 +180,7 @@ define list_of_list = [list_123, list_456]
 From `lib/List.pf`:
 
 ```{.deduce^#length}
-function length<E>(List<E>) -> Nat {
+recursive length<E>(List<E>) -> UInt {
   length(empty) = 0
   length(node(n, next)) = 1 + length(next)
 }
@@ -202,7 +202,7 @@ The following `search` function returns the position in the list of
 the first occurence of the given number.
 
 ```{.deduce^#search}
-function search(List<Nat>, Nat) -> Nat {
+recursive search(List<UInt>, UInt) -> UInt {
   search(empty, y) = 0
   search(node(x, xs), y) =
     if x = y then 0
@@ -230,10 +230,10 @@ in each call (the comparison `x = y`, the `if`, and the addition `1 +`).
 
 The `import` declaration makes available the contents of another
 Deduce file in the current file. For example, you can import the
-contents of `lib/Nat.pf` as follows
+contents of `lib/UInt.pf` as follows
 
-```{.deduce^#importNat}
-import Nat
+```{.deduce^#importUInt}
+import UInt
 ```
 
 If you need to import a file from some other directory, use
@@ -260,7 +260,7 @@ the function enclosed in braces.  For example, the following defines a
 function for computing the area of a rectangle.
 
 ```{.deduce^#area}
-define area = fun h : Nat, w : Nat { h * w }
+define area = fun h : UInt, w : UInt { h * w }
 ```
 
 To call a function, apply it to the appropriate number and type of
@@ -284,12 +284,16 @@ The `first` function returns the first element of the pair
 and `second` returns the second element.
 
 ```{.deduce^#firstSecond}
-function first<T,U>(Pair<T,U>) -> T {
-  first(pair(x,y)) = x
+fun first<T,U>(p : Pair<T,U>)  {
+  switch p {
+    case pair(x,y) { x }
+  }
 }
 
-function second<T,U>(Pair<T,U>) -> U {
-  second(pair(x,y)) = y
+fun second<T,U>(p : Pair<T,U>) {
+  switch p {
+    case pair(x,y) { y }
+  }
 }
 ```
 
@@ -324,7 +328,7 @@ The `nth` function retrieves the element at position `i` in list
 `nth` returns the default value `d`.
 
 ```
-function nth<T>(List<T>, T) -> (fn Nat -> T) {
+recursive nth<T>(List<T>, T) -> (fn Nat -> T) {
   nth(empty, d) = fun i { d }
   nth(node(x, xs), d) = fun i {
     if i = 0 then
@@ -353,16 +357,16 @@ parameters and returns a function of one parameter that returns an
 element. We could have instead made `nth` take three parameters and
 directly return an element. We made this design choice because it
 means we can use `nth` with several other functions and theorems that
-work with functions of the type `fn Nat -> T`.
+work with functions of the type `fn UInt -> T`.
 -->
 
 <!--
 ```{.deduce^file=DeduceProgramming1.pf}
-<<importNat>>
+<<importUInt>>
 <<Fruit>>
 <<apple>>
-<<NatList>>
-<<NatListL>>
+<<UIntList>>
+<<UIntListL>>
 <<len>>
 <<lenL3>>
 <<printFive>>
@@ -371,7 +375,7 @@ work with functions of the type `fn Nat -> T`.
 ```
 
 ```{.deduce^file=DeduceProgramming2.pf}
-<<importNat>>
+<<importUInt>>
 <<Fruit2>>
 <<banana>>
 <<switchFruit>>

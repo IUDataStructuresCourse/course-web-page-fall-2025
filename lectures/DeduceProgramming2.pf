@@ -1,6 +1,6 @@
 /* ~/~ begin <<deduce-programming.en#DeduceProgramming2.pf>>[init] */
-/* ~/~ begin <<deduce-programming.en#importNat>>[init] */
-import Nat
+/* ~/~ begin <<deduce-programming.en#importUInt>>[init] */
+import UInt
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#Fruit2>>[init] */
 union Fruit {
@@ -31,7 +31,7 @@ union List<T> {
 }
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List123>>[init] */
-define list_123 : List<Nat> = node(1, node(2, node(3, empty)))
+define list_123 : List<UInt> = node(1, node(2, node(3, empty)))
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List456>>[init] */
 define list_456 = [4,5,6]
@@ -40,7 +40,7 @@ define list_456 = [4,5,6]
 define list_of_list = [list_123, list_456]
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#length>>[init] */
-function length<E>(List<E>) -> Nat {
+recursive length<E>(List<E>) -> UInt {
   length(empty) = 0
   length(node(n, next)) = 1 + length(next)
 }
@@ -49,7 +49,7 @@ function length<E>(List<E>) -> Nat {
 print if length([1,2,3]) = 3 then 42 else 0
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#search>>[init] */
-function search(List<Nat>, Nat) -> Nat {
+recursive search(List<UInt>, UInt) -> UInt {
   search(empty, y) = 0
   search(node(x, xs), y) =
     if x = y then 0
@@ -68,12 +68,16 @@ union Pair<T,U> {
 }
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#firstSecond>>[init] */
-function first<T,U>(Pair<T,U>) -> T {
-  first(pair(x,y)) = x
+fun first<T,U>(p : Pair<T,U>)  {
+  switch p {
+    case pair(x,y) { x }
+  }
 }
 
-function second<T,U>(Pair<T,U>) -> U {
-  second(pair(x,y)) = y
+fun second<T,U>(p : Pair<T,U>) {
+  switch p {
+    case pair(x,y) { y }
+  }
 }
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#firstPair>>[init] */

@@ -67,15 +67,13 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 
 **Schedule**
 
-UNDER CONSTRUCTION
-
 Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
 Aug. 25 | [Introduction](./lectures/introduction.md)                |              |                           |
 Aug. 27 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |                           |
 Aug. 29 |                                                           |              | [Lab: Array Search and Testing](./Search) |
 Sep. 1  | **Labor Day** (no class)
 Sep. 3  | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | 
-Sep. 5  |                                                                          | [Project: FloodIt!](./flood-it)
+Sep. 5  |                                                           |              | [Project: FloodIt!](./flood-it)
 Sep. 8  | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md)
 Sep. 10 | [Algorithm Analysis](./lectures/algo-analysis.md)
 Sep. 12 | 

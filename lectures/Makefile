@@ -1,7 +1,8 @@
 DEDUCE_DIR=/Users/jsiek/deduce
 LIB_DIR=$(DEDUCE_DIR)/lib
-PYTHON=/opt/homebrew/bin/python3.11
+PYTHON=/Library/Frameworks/Python.framework/Versions/3.13/bin/python3
 DEDUCE = $(DEDUCE_DIR)/deduce.py
+ENTANGLED = /Library/Frameworks/Python.framework/Versions/3.13/bin/entangled
 
 %.png: %.dot
 	dot $< -Tpng > $@
@@ -64,24 +65,24 @@ BellmanFord:
 
 rev_rev:
 	cat Revrev.md | sed 's/deduce\^/deduce /' > RevRev.en
-	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(ENTANGLED) tangle 
 	$(PYTHON) $(DEDUCE_DIR)/deduce.py RevRev.pf --dir $(LIB_DIR)
 
 deduce_programming:
 	cat deduce-programming.md | sed 's/deduce\^/deduce /' > deduce-programming.en
-	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(ENTANGLED) tangle 
 	$(PYTHON) $(DEDUCE) DeduceProgramming1.pf --dir $(LIB_DIR)
 	$(PYTHON) $(DEDUCE) DeduceProgramming2.pf --dir $(LIB_DIR)
 
 deduce_intro_proof:
 	cat deduce-intro-proof.md | sed 's/deduce\^/deduce /' > deduce-intro-proof.en
 	cat deduce-more-proof.md | sed 's/deduce\^/deduce /' > deduce-more-proof.en
-	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(ENTANGLED) tangle 
 	$(PYTHON) $(DEDUCE) DeduceIntroProof.pf --dir $(LIB_DIR)
 	$(PYTHON) $(DEDUCE) DeduceIntroProof2.pf --dir $(LIB_DIR)
 
 logic_and_sets:
 	cat LogicAndSets.md | sed 's/deduce\^/deduce /' > LogicAndSets.en
-	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(ENTANGLED) tangle 
 	$(PYTHON) $(DEDUCE_DIR)/deduce.py LogicAndSets.pf --dir $(LIB_DIR)
 
