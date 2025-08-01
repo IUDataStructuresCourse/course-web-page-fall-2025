@@ -45,15 +45,16 @@ Expect at least one quiz per month during lab time.
 
 Office hours with TAs are in Luddy Hall Room 0121.
 
-Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
-10am    |             |            |          |             |
-11am    |                   |            |                |             | 
-12pm    |                   |            |                |             |
-1pm     |             |            |  |             | 
-2pm     |              |     |                |             |
-3pm     |             |     |          |    | 
-4pm     |              |     |           |    |
-5pm     |                   |            |                |             |
+| Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday |
+|---------|-------------------|------------|----------------|-------------|--------|
+| 10am    |                   |            |                |             |        |
+| 11am    |                   |            |                |             |        |
+| 12pm    |                   |            |                |             |        |
+| 1pm     |             |            |  |             |         |
+| 2pm     |              |     |                |             |  |
+| 3pm     |             |     |          |    |   |
+| 4pm     |              |     |           |    |  |
+| 5pm     |                   |            |                |             |  |
 
 
 
@@ -67,7 +68,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 
 **Schedule**
 
-Day     | Lecture Topic                                             | Reading Due    | Assignments and Due Dates | Link
+  Day   | Lecture Topic                                             | Reading Due    | Assignments and Due Dates | Link
 Aug. 25 | [Introduction](./lectures/introduction.md)                |                |                           |
 Aug. 27 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch.1           |                           |
 Aug. 29 |                                                           |                | [Lab: Array Search and Testing](./Search) |
@@ -76,10 +77,10 @@ Sep. 3  | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch.2      
 Sep. 5  |                                                           |                | [Project: FloodIt!](./flood-it)
 Sep. 8  | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md)  |       | 
 Sep. 10 | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 | Homework: about big-O
-Sep. 12 |                                                           |                | Lab: Merge Sort on Linked Lists
+Sep. 12 |                                                           |                | Lab: [Merge Sort](./MergeSort.md)
 Sep. 15 | [Sorting: Insertion, Merge, Quick](./lectures/sorting.md) | Ch.7 Sec.2,6,7 | 
-Sep. 17 | [Sorting in Linear Time](./lectures/sort-linear.md)       | Ch. 7 Sec.11   | Homework: about algo. analysis
-Sep. 19 |                                                           |                | Lab: Generic Quicksort
+Sep. 17 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | Ch. 7 Sec.11   | Homework: about algo. analysis
+Sep. 19 |                                                           |                | Lab: [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html)
 Sep. 22 | [Binary Trees](./lectures/binary-trees.md)                | Ch.4 Sec.1,2    
 Sep. 24 | [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch. 4 Sec. 3 | Homework: about sorting
 Sep. 26 |                                                           |                | Project: Segment Intersection (BST)
@@ -89,7 +90,7 @@ Oct. 3  |                                                           |           
 Oct. 6  | Review for Midterm Exam
 Oct. 8  | **Midterm Exam**
 Oct. 10 | **Fall Break**
-Oct. 13 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html)
+Oct. 13 |  | 
 Oct. 15 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) | 
 Oct. 17 | | | Lab: [Linked Lists in Deduce](./LabDeduceProg)
 Oct. 20 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
@@ -117,14 +118,9 @@ Dec. 12 |
 Dec. 15-19 | **Final Exam Week**
 
 <!--
-
-
-[Binomial Queues](./lectures/binomial-queues.md) | Ch. 6 sec. 8
-
-
-
+[Sorting in Linear Time](./lectures/sort-linear.md) | Ch. 7 Sec.11
+[Binomial Queues](./lectures/binomial-queues.md) | Ch. 6 Sec. 8
 [More Proof Techniques, Induction](./lectures/deduce-more-proof.md)      
-
 -->
 
 
