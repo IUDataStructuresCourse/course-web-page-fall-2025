@@ -68,14 +68,14 @@ Concepts:
 * [comma](https://jsiek.github.io/deduce/pages/reference.html#comma-logical-and-introduction)
 
 Example:
-```{.deduce^#and_commute}
-theorem and_commute: all P:bool, Q:bool. if P and Q then Q and P
+```{.deduce^#ex_and}
+theorem ex_and: all P:bool, Q:bool, R:bool. if P and Q and R then R and P
 proof
-  arbitrary P:bool, Q:bool
-  assume pq
-  have q: Q by conjunct 1 of pq
-  have p: P by conjunct 0 of pq
-  p, q
+  arbitrary P:bool, Q:bool, R:bool
+  assume pqr
+  have r: R by conjunct 2 of pqr
+  have p: P by conjunct 0 of pqr
+  r, p
 end
 ```
 
@@ -90,7 +90,7 @@ import Set
 <<len_one>>
 <<len_42>>
 <<if_commute>>
-<<and_commute>>
+<<ex_and>>
 ```
 -->
 
