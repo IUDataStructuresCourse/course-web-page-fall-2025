@@ -52,18 +52,17 @@ proof
 end
 ```
 
-(4) Prove that if `P`, then `P and P`.
+(4) Prove that `if P and Q then R` implies `if Q then if P then R`.
 
 ```{.deduce^#ex_all_if_and}
-theorem ex_all_if_and: all P:bool. if P then P and P
+theorem ex_all_if_and: all P:bool, Q:bool, R:bool.
+  if (if P and Q then R) then (if Q then if P then R)
 proof
-  arbitrary P:bool
-  assume p: P
-  p, p
+  ?
 end
 ```
 
-(5) Prove that if `if P  then Q` and `if Q then R`, then `if P then R`.
+(5) Prove that `if P  then Q` and `if Q then R` implies `if P then R`.
 
 ``````{.deduce^#ex_if3}
 theorem ex_if3: all P:bool, Q:bool, R:bool.
