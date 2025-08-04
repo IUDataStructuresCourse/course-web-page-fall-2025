@@ -1,5 +1,9 @@
 # Writing Proofs in Deduce
 
+In this lecture we begin to learn how to write proofs in Deduce.
+
+The proofs will use the definitions from the [previous lecture](./deduce-programming.md).
+
 Concepts:
 * [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement
 * [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) proof
@@ -37,6 +41,43 @@ proof
 end
 ```
 
+Concepts:
+* [`if`-`then`](https://jsiek.github.io/deduce/pages/reference.html#if-then-conditional-formula) formula
+* [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume) proof
+* [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
+* [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement)
+
+Example:
+```{.deduce^#if_commute}
+theorem if_commute: all P:bool, Q:bool, R:bool.
+  if (if P then if Q then R) then (if Q then if P then R)
+proof
+  arbitrary P:bool, Q:bool, R:bool
+  assume pqr: if P then if Q then R
+  assume q: Q
+  assume p: P
+  have pr: if Q then R  by apply pqr to p
+  apply pr to q
+end  
+```
+
+
+Concepts:
+* [`and`](https://jsiek.github.io/deduce/pages/reference.html#and-logical-conjunction)
+* [`conjunct`](https://jsiek.github.io/deduce/pages/reference.html#conjunct)
+* [comma](https://jsiek.github.io/deduce/pages/reference.html#comma-logical-and-introduction)
+
+Example:
+```{.deduce^#and_commute}
+theorem and_commute: all P:bool, Q:bool. if P and Q then Q and P
+proof
+  arbitrary P:bool, Q:bool
+  assume pq
+  have q: Q by conjunct 1 of pq
+  have p: P by conjunct 0 of pq
+  p, q
+end
+```
 
 
 <!--
@@ -48,6 +89,8 @@ import Set
 <<len_empty>>
 <<len_one>>
 <<len_42>>
+<<if_commute>>
+<<and_commute>>
 ```
 -->
 

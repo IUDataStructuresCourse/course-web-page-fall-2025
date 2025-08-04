@@ -17,7 +17,7 @@ These exercises are meant for you to practice the following logical concepts in 
 * `and` formulas, `conjunct`, combining proofs with comma.
 * `expand` a definition
 * `replace` equals for equals
-
+* forward reasoning using `have`
 
 ## Problems
 

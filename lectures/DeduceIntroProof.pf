@@ -22,4 +22,26 @@ proof
   replace len_one[42].
 end
 /* ~/~ end */
+/* ~/~ begin <<deduce-intro-proof.en#if_commute>>[init] */
+theorem if_commute: all P:bool, Q:bool, R:bool.
+  if (if P then if Q then R) then (if Q then if P then R)
+proof
+  arbitrary P:bool, Q:bool, R:bool
+  assume pqr: if P then if Q then R
+  assume q: Q
+  assume p: P
+  have pr: if Q then R  by apply pqr to p
+  apply pr to q
+end  
+/* ~/~ end */
+/* ~/~ begin <<deduce-intro-proof.en#and_commute>>[init] */
+theorem and_commute: all P:bool, Q:bool. if P and Q then Q and P
+proof
+  arbitrary P:bool, Q:bool
+  assume pq
+  have q: Q by conjunct 1 of pq
+  have p: P by conjunct 0 of pq
+  p, q
+end
+/* ~/~ end */
 /* ~/~ end */
