@@ -7,12 +7,26 @@ The proofs will use the definitions from the [previous lecture](./deduce-program
 Concepts:
 * [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement
 * [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) proof
+* [`show`](https://jsiek.github.io/deduce/pages/reference.html#show-proof) 
 
 Example:
 ```{.deduce^#len_empty}
 theorem len_empty: 0 = len(Empty)
 proof
   expand len.
+end
+```
+
+```{.deduce^#ex_expand}
+theorem ex_expand: search([4, 3, 8], 8) = 2
+proof
+  expand search
+  show 1 + search([3, 8], 8) = 2
+  expand search
+  show 2 + search([8], 8) = 2
+  expand search
+  show 2 + 0 = 2
+  .
 end
 ```
 
@@ -84,9 +98,11 @@ end
 ```{.deduce^file=DeduceIntroProof.pf}
 import UInt
 import DeduceProgramming1
+import DeduceProgramming2
 import Set
 
 <<len_empty>>
+<<ex_expand>>
 <<len_one>>
 <<len_42>>
 <<if_commute>>

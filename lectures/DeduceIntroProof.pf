@@ -1,12 +1,25 @@
 /* ~/~ begin <<deduce-intro-proof.en#DeduceIntroProof.pf>>[init] */
 import UInt
 import DeduceProgramming1
+import DeduceProgramming2
 import Set
 
 /* ~/~ begin <<deduce-intro-proof.en#len_empty>>[init] */
 theorem len_empty: 0 = len(Empty)
 proof
   expand len.
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-intro-proof.en#ex_expand>>[init] */
+theorem ex_expand: search([4, 3, 8], 8) = 2
+proof
+  expand search
+  show 1 + search([3, 8], 8) = 2
+  expand search
+  show 2 + search([8], 8) = 2
+  expand search
+  show 2 + 0 = 2
+  .
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#len_one>>[init] */
