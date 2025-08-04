@@ -79,10 +79,6 @@ end
 ```{.deduce^#ex_if_if}
 theorem ex_if_if: all P:bool, Q:bool, R:bool. if (if P then (if Q then R)) and (if P then Q) and P then R
 proof
-  arbitrary P:bool, Q:bool, R:bool
-  assume prem
-  have q: Q  by apply (conjunct 1 of prem) to (conjunct 2 of prem)
-  have qr: if Q then R  by apply (conjunct 0 of prem) to (conjunct 2 of prem)
-  conclude R by apply qr to q
+  ?
 end
 ```
