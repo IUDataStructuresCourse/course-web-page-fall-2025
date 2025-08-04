@@ -91,7 +91,7 @@ import List
 Here's the skeleton for your `sum` function.
 
 ```
-function sum(List<Nat>) -> Nat {
+recursive sum(List<Nat>) -> Nat {
   FILL IN
 }
 ```
@@ -145,7 +145,7 @@ Consider the `sum` function that you created above.  We can change
 stores the total-so-far.
 
 ```
-function sum_accum(List<Nat>, Nat) -> Nat {
+recursive sum_accum(List<Nat>, Nat) -> Nat {
   sum_accum(empty, total) = total
   sum_accum(node(x, xs), total) = sum_accum(xs, x + total)
 }
@@ -200,7 +200,7 @@ is empty. To return two lists, use the `Pair` type which you can
 import from the `Pair` library.
 
 ```
-function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
+recursive search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
   FILL IN
 }
 ```

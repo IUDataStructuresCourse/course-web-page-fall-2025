@@ -68,6 +68,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 
 **Schedule**
 
+
 | Day        | Lecture Topic                                                | Reading Due                                                  | Assignments and Due Dates                                 | Link |
 |------------|--------------------------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------|------|
 | Aug. 25    | [Introduction](./lectures/introduction.md)                   |                                                              |                                                           |      |
@@ -83,16 +84,16 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Sep. 17    | [Sorting: Insertion, Quick](./lectures/sorting.md)           | Ch.7 Sec.2,7                                                 | Homework: about algo. analysis                            |      |
 | Sep. 19    | —                                                            |                                                              | Lab: [Linked Lists in Deduce](./LabDeduceProg)            |      |
 | Sep. 22    | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) |                                                           |      |
-| Sep. 24    | [Binary Trees](./lectures/binary-trees.md) and [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch.4 Sec.1,2,3                                               | Homework: Deduce Exercises                                |      |
+| Sep. 24    | [Binary Trees](./lectures/binary-trees.md) and [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch.4 Sec.1,2,3                                               | Homework: [Deduce Proof Exercise 1](./ProofExercise1.md)  |      |
 | Sep. 26    | —                                                            |                                                              | Project: Segment Intersection (BST)                       |      |
 | Sep. 29    | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) |                                                              |                                                           |      |
-| Oct. 1     | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4                                                 | Homework: Deduce Exercises                                |      |
+| Oct. 1     | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4                                                 | Homework: [Quick Reverse Correct](./QuickReverse.md)<br>  |      |
 | Oct. 3     | —                                                            |                                                              | Project: Segment Intersection (AVL)                       |      |
 | Oct. 6     | Review for Midterm Exam                                      |                                                              |                                                           |      |
 | Oct. 8     | **Midterm Exam**                                             |                                                              |                                                           |      |
 | Oct. 10    | **Fall Break**                                               |                                                              |                                                           |      |
 | Oct. 13    | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)  |                                                              |                                                           |      |
-| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: [Quick Reverse Correct](./QuickReverse.md)      |      |
+| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: Deduce Proof Exercise 2                         |      |
 | Oct. 17    | —                                                            |                                                              | Lab: [Hash Table](./LabHashTable.md)                      |      |
 | Oct. 20    | [Heaps and Priority Queues](./lectures/heaps.md)             | Ch. 6 sec. 1-4,9                                             |                                                           |      |
 | Oct. 22    | [Binomial Heaps and Queues](./lectures/binomial-queues.md)   | Ch.6 Sec.8                                                   | Homework: [List Search Correct](./ListSearch.md)          |      |
@@ -117,6 +118,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Dec. 10    | Review for Final Exam                                        |                                                              |                                                           |      |
 | Dec. 12    | —                                                            |                                                              | Lab: Review for Final Exam                                |      |
 | Dec. 15-19 | **Final Exam Week**                                          |                                                              |                                                           |      |
+
 
 <!--
 [Sorting in Linear Time](./lectures/sort-linear.md) | Ch. 7 Sec.11

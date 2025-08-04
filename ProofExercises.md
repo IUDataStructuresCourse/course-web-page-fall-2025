@@ -13,7 +13,7 @@ for reminders on proof strategies and keywords.
 
 (1) Complete the following proof.
 
-```{.deduce^#append_node_x_node_y}
+```{.deduce^#append_xy}
 theorem append_xy:
   all T:type. all x:T, y:T. [x] ++ [y] = [x, y]
 proof
@@ -23,8 +23,8 @@ end
 
 (2) Prove that `[1] ++ [2] = [1, 2]` by using the `append_xy` theorem.
 
-```{.deduce^#append_node_1_node_2}
-theorem append_node_1_node_2:
+```{.deduce^#append_1_2}
+theorem append_1_2:
   [1] ++ [2] = [1, 2]
 proof
   ?
