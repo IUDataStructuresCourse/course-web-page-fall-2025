@@ -30,8 +30,8 @@ proof
   assume pqr: if P then if Q then R
   assume q: Q
   assume p: P
-  have pr: if Q then R  by apply pqr to p
-  apply pr to q
+  have qr: if Q then R  by apply pqr to p
+  apply qr to q
 end  
 /* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#and_commute>>[init] */
