@@ -2,6 +2,7 @@
 import UInt
 import DeduceProgramming
 import List
+import Pair
 
 /* ~/~ begin <<deduce-intro-proof.en#prove_true>>[init] */
 theorem prove_true: true
@@ -12,7 +13,7 @@ end
 /* ~/~ begin <<deduce-intro-proof.en#len_empty>>[init] */
 theorem len_empty: 0 = len(Empty)
 proof
-  expand len.
+  expand len.     // len(Empty) = 0
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#ex_expand>>[init] */
@@ -23,7 +24,6 @@ proof
   expand search
   show 2 + search([8], 8) = 2
   expand search
-  show 2 + 0 = 2
   .
 end
 /* ~/~ end */
@@ -38,6 +38,14 @@ end
 theorem len_42:  1 = len(Node(42, Empty))
 proof
   replace len_one[42].
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-intro-proof.en#first_pair_123>>[init] */
+theorem first_pair_123: first(second(pair(1,pair(2,3)))) = 2
+proof
+  replace second_pair
+  show first(pair(2, 3)) = 2
+  replace first_pair.
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#if_commute>>[init] */

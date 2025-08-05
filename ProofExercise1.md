@@ -5,9 +5,10 @@
 For this assignment, you will get started writing your own proofs of theorems
 in Deduce.
 
-As a reminder, you can refer to the [Deduce Reference Manual](https://jsiek.github.io/deduce/pages/reference.html),
-as well as to [introduction to proofs in deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html#)
-for reminders on proof strategies and keywords.
+As a reminder, you can refer to the following
+* [Deduce Reference Manual](https://jsiek.github.io/deduce/pages/reference.html),
+* [Introduction to proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html)
+* [Cheat Sheet for Proofs](https://jsiek.github.io/deduce/pages/cheat-sheet.html)
 
 ## Learning Goals
 

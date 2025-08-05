@@ -1,4 +1,5 @@
 /* ~/~ begin <<deduce-programming.en#DeduceProgramming.pf>>[init] */
+import Pair
 /* ~/~ begin <<deduce-programming.en#importUInt>>[init] */
 import UInt
 /* ~/~ end */
@@ -91,28 +92,6 @@ assert search(list_123, 1) = 0
 assert search(list_123, 2) = 1
 assert search(list_123, 3) = 2
 assert search(list_123, 4) = 3
-/* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#Pair>>[init] */
-union Pair<T,U> {
-  pair(T,U)
-}
-/* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#firstSecond>>[init] */
-fun first<T,U>(p : Pair<T,U>)  {
-  switch p {
-    case pair(x,y) { x }
-  }
-}
-
-fun second<T,U>(p : Pair<T,U>) {
-  switch p {
-    case pair(x,y) { y }
-  }
-}
-/* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#firstPair>>[init] */
-assert first(pair(3,7)) = 3
-assert second(pair(3,7)) = 7
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#swap>>[init] */
 fun swap<T, U>(p:Pair<T,U>) {

@@ -22,11 +22,11 @@ Concepts:
 * [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) proof
 * [`show`](https://jsiek.github.io/deduce/pages/reference.html#show-proof) 
 
-Example:
+Examples:
 ```{.deduce^#len_empty}
 theorem len_empty: 0 = len(Empty)
 proof
-  expand len.
+  expand len.     // len(Empty) = 0
 end
 ```
 
@@ -38,7 +38,6 @@ proof
   expand search
   show 2 + search([8], 8) = 2
   expand search
-  show 2 + 0 = 2
   .
 end
 ```
@@ -60,11 +59,20 @@ Concepts:
 * [proof instantiation](https://jsiek.github.io/deduce/pages/reference.html#instantiation-proof)
 * [`replace`](https://jsiek.github.io/deduce/pages/reference.html#replace-proof)
 
-Example:
+Examples:
 ```{.deduce^#len_42}
 theorem len_42:  1 = len(Node(42, Empty))
 proof
   replace len_one[42].
+end
+```
+
+```{.deduce^#first_pair_123}
+theorem first_pair_123: first(second(pair(1,pair(2,3)))) = 2
+proof
+  replace second_pair
+  show first(pair(2, 3)) = 2
+  replace first_pair.
 end
 ```
 
@@ -113,12 +121,14 @@ end
 import UInt
 import DeduceProgramming
 import List
+import Pair
 
 <<prove_true>>
 <<len_empty>>
 <<ex_expand>>
 <<len_one>>
 <<len_42>>
+<<first_pair_123>>
 <<if_commute>>
 <<ex_and>>
 ```

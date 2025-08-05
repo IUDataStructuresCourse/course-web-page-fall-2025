@@ -364,6 +364,7 @@ work with functions of the type `fn UInt -> T`.
 
 <!--
 ```{.deduce^file=DeduceProgramming.pf}
+import Pair
 <<importUInt>>
 <<Fruit>>
 <<apple>>
@@ -388,9 +389,6 @@ import List
 <<assertIfTrue>>
 <<search>>
 <<searchExamples>>
-<<Pair>>
-<<firstSecond>>
-<<firstPair>>
 <<swap>>
 ```
 -->
