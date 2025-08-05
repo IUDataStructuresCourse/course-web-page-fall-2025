@@ -93,7 +93,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Oct. 8     | **Midterm Exam**                                             |                                                              |                                                           |      |
 | Oct. 10    | **Fall Break**                                               |                                                              |                                                           |      |
 | Oct. 13    | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)  |                                                              |                                                           |      |
-| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: Deduce Proof Exercise 2                         |      |
+| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: [Deduce Proof Exercise 2](./ProofExercise2.md)                         |      |
 | Oct. 17    | —                                                            |                                                              | Lab: [Hash Table](./LabHashTable.md)                      |      |
 | Oct. 20    | [Heaps and Priority Queues](./lectures/heaps.md)             | Ch. 6 sec. 1-4,9                                             |                                                           |      |
 | Oct. 22    | [Binomial Heaps and Queues](./lectures/binomial-queues.md)   | Ch.6 Sec.8                                                   | Homework: [List Search Correct](./ListSearch.md)          |      |

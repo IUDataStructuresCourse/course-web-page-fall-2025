@@ -22,6 +22,8 @@ proof
 end
 ```
 
+Prove that `or` is commutative.  Hint: use `cases`.
+
 ```
 theorem ex_or_commute: all P:bool, Q:bool. if P or Q then Q or P
 proof
@@ -29,6 +31,16 @@ proof
 end
 ```
 
+Prove that `if (not not Q) then P` and `not P` implies `not Q`.
+(This is good practice for reasoning about `not`.)
+
+```
+theorem not2_if_not_not: all P:bool, Q:bool.
+  if (if (not not Q) then P) and not P then not Q
+proof
+  ?
+end
+```
 
 Prove that adding two odd numbers yields an even number.  The
 definition of `Odd` and `Even` are in `UInt.thm`.  Hint: use the
