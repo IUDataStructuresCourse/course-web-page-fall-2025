@@ -5,7 +5,9 @@
 
 * `induction` proof method
 * logical `or` and the `cases` proof method
-
+* logical `not` and the `contradict` proof method
+* `equations`
+* the `some` quantifier, `obtain`, and `choose`
 
 ## Problems
 
