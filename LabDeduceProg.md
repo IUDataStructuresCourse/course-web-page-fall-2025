@@ -111,7 +111,6 @@ list. The `concat` function should have the following type.
 concat : < E > fn List<List<E>> -> List<E>
 ```
 
-In general, you may use any functions in `List.pf`.
 The following shows an example use of the `concat` function.
 
 ```
@@ -121,6 +120,9 @@ assert concat([[1,2,3], [4,5]]) = [1,2,3,4,5]
 Use this `assert` statement and several of your own to test whether
 your `concat` function behaves as expected.
 
+In general, you may use any function in the Deduce library.  For
+example, the append function (`operator++`) in `lib/List.pf` is useful
+for implementing `concat`.
 
 ### Quick Reverse, Accumulator-Passing Style
 

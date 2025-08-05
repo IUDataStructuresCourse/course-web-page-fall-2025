@@ -1,19 +1,58 @@
-/* ~/~ begin <<deduce-programming.en#DeduceProgramming2.pf>>[init] */
+/* ~/~ begin <<deduce-programming.en#DeduceProgramming.pf>>[init] */
 /* ~/~ begin <<deduce-programming.en#importUInt>>[init] */
 import UInt
 /* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#Fruit2>>[init] */
+/* ~/~ begin <<deduce-programming.en#Fruit>>[init] */
 union Fruit {
+  apple
+  orange
+  banana
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#apple>>[init] */
+define f1 : Fruit = apple
+define f2 : Fruit = banana
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#UIntList>>[init] */
+union UIntList {
+  Empty
+  Node(UInt, UIntList)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#UIntListL>>[init] */
+define L = Node(7, Node(4, Node(5, Empty)))
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#len>>[init] */
+recursive len(UIntList) -> UInt {
+  len(Empty) = 0
+  len(Node(n, next)) = 1 + len(next)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#lenL3>>[init] */
+assert len(L) = 3
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#printFive>>[init] */
+print 5
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#area>>[init] */
+define area = fun h : UInt, w : UInt { h * w }
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#area12>>[init] */
+assert area(3, 4) = 12
+/* ~/~ end */
+
+/* ~/~ begin <<deduce-programming.en#Fruit2>>[init] */
+union Fruit2 {
   apple
   orange
   banana(bool)
 }
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#banana>>[init] */
-define f3 : Fruit = banana(false)
-define f4 : Fruit = banana(true)
+define f3 : Fruit2 = banana(false)
+define f4 : Fruit2 = banana(true)
 /* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#switchFruit>>[init] */
+/* ~/~ begin <<deduce-programming.en#switchFruit2>>[init] */
 define r4 : bool = 
     switch f4 {
       case apple { false }

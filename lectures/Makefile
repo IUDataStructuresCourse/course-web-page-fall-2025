@@ -71,8 +71,7 @@ rev_rev:
 deduce_programming:
 	cat deduce-programming.md | sed 's/deduce\^/deduce /' > deduce-programming.en
 	$(ENTANGLED) tangle 
-	$(PYTHON) $(DEDUCE) DeduceProgramming1.pf --dir $(LIB_DIR)
-	$(PYTHON) $(DEDUCE) DeduceProgramming2.pf --dir $(LIB_DIR)
+	$(PYTHON) $(DEDUCE) DeduceProgramming.pf --dir $(LIB_DIR)
 
 deduce_intro_proof:
 	cat deduce-intro-proof.md | sed 's/deduce\^/deduce /' > deduce-intro-proof.en

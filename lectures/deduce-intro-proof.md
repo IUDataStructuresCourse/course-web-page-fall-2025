@@ -2,7 +2,7 @@
 
 In this lecture we begin to learn how to write proofs in Deduce.
 
-The proofs will use the definitions from the [previous lecture](./deduce-programming.md).
+The proofs will use the definitions from the [previous lecture](./DeduceProgramming.pf).
 
 Concepts:
 * [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement

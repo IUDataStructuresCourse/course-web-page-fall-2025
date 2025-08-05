@@ -39,7 +39,7 @@ should keep track of that information. We can accomplish that by
 adding a parameter of type `bool` to the `banana` alternative:
 
 ```{.deduce^#Fruit2}
-union Fruit {
+union Fruit2 {
   apple
   orange
   banana(bool)
@@ -50,8 +50,8 @@ and now when we create a banana, we have to say whether it is rotten
 or not.
 
 ```{.deduce^#banana}
-define f3 : Fruit = banana(false)
-define f4 : Fruit = banana(true)
+define f3 : Fruit2 = banana(false)
+define f4 : Fruit2 = banana(true)
 ```
 
 We can inspect and dispatch on values of union type using Deduce's
@@ -61,7 +61,7 @@ Deduce initializes the `r` variable to `true` (because `f4` is
 `banana(true)`).
 
 
-```{.deduce^#switchFruit}
+```{.deduce^#switchFruit2}
 define r4 : bool = 
     switch f4 {
       case apple { false }
@@ -363,7 +363,7 @@ work with functions of the type `fn UInt -> T`.
 -->
 
 <!--
-```{.deduce^file=DeduceProgramming1.pf}
+```{.deduce^file=DeduceProgramming.pf}
 <<importUInt>>
 <<Fruit>>
 <<apple>>
@@ -374,13 +374,10 @@ work with functions of the type `fn UInt -> T`.
 <<printFive>>
 <<area>>
 <<area12>>
-```
 
-```{.deduce^file=DeduceProgramming2.pf}
-<<importUInt>>
 <<Fruit2>>
 <<banana>>
-<<switchFruit>>
+<<switchFruit2>>
 <<assertR4>>
 <<List>>
 <<List123>>
