@@ -6,6 +6,19 @@ The proofs will use the definitions from the [previous lecture](./DeduceProgramm
 
 Concepts:
 * [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement
+* [`true`](https://jsiek.github.io/deduce/pages/reference.html#true-formula) formula
+* [period](https://jsiek.github.io/deduce/pages/reference.html#period-proof-of-true)
+
+Example:
+```{.deduce^#prove_true}
+theorem prove_true: true
+proof
+  .
+end
+```
+
+
+Concepts:
 * [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) proof
 * [`show`](https://jsiek.github.io/deduce/pages/reference.html#show-proof) 
 
@@ -60,6 +73,7 @@ Concepts:
 * [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume) proof
 * [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
 * [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement)
+* [`recall`](https://jsiek.github.io/deduce/pages/reference.html#recall-proof) proof
 
 Example:
 ```{.deduce^#if_commute}
@@ -68,10 +82,10 @@ theorem if_commute: all P:bool, Q:bool, R:bool.
 proof
   arbitrary P:bool, Q:bool, R:bool
   assume pqr: if P then if Q then R
-  assume q: Q
-  assume p: P
-  have qr: if Q then R  by apply pqr to p
-  apply qr to q
+  assume: Q
+  assume: P
+  have qr: if Q then R  by apply pqr to (recall P)
+  apply qr to (recall Q)
 end  
 ```
 
@@ -97,10 +111,10 @@ end
 <!--
 ```{.deduce^file=DeduceIntroProof.pf}
 import UInt
-import DeduceProgramming1
-import DeduceProgramming2
-import Set
+import DeduceProgramming
+import List
 
+<<prove_true>>
 <<len_empty>>
 <<ex_expand>>
 <<len_one>>

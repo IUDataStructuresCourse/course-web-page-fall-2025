@@ -41,6 +41,9 @@ define area = fun h : UInt, w : UInt { h * w }
 assert area(3, 4) = 12
 /* ~/~ end */
 
+
+import List
+
 /* ~/~ begin <<deduce-programming.en#Fruit2>>[init] */
 union Fruit2 {
   apple
@@ -63,12 +66,6 @@ define r4 : bool =
 /* ~/~ begin <<deduce-programming.en#assertR4>>[init] */
 assert r4
 /* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#List>>[init] */
-union List<T> {
-  empty
-  node(T, List<T>)
-}
-/* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List123>>[init] */
 define list_123 : List<UInt> = node(1, node(2, node(3, empty)))
 /* ~/~ end */
@@ -77,12 +74,6 @@ define list_456 = [4,5,6]
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List123456>>[init] */
 define list_of_list = [list_123, list_456]
-/* ~/~ end */
-/* ~/~ begin <<deduce-programming.en#length>>[init] */
-recursive length<E>(List<E>) -> UInt {
-  length(empty) = 0
-  length(node(n, next)) = 1 + length(next)
-}
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#assertIfTrue>>[init] */
 print if length([1,2,3]) = 3 then 42 else 0

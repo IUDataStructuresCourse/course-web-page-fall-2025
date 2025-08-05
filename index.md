@@ -137,7 +137,7 @@ Jan. 23 or 24 |                                                     |           
 Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html) | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
 Jan. 30 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md)                                | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg) | [code](https://autograder.luddy.indiana.edu/web/project/1614)
-Feb. 4  | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) | | Lab Linked Lists in Deduce due
+Feb. 4  | [More Proofs and Induction](./lectures/deduce-more-proof.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Logical And, Or, Not, and Sets](./lectures/LogicAndSets.md)                        |              |   | 
 Feb. 6 or 7 |                                                       |              | [Lab: Proof Exercises](./ProofExercises.md) (Quiz)
 Feb. 11 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                                            |  | Lab Proof Exercises due | [submit](https://autograder.luddy.indiana.edu/web/project/1623)

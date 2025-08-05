@@ -1,8 +1,8 @@
 /* ~/~ begin <<deduce-more-proof.en#DeduceIntroProof2.pf>>[init] */
 import UInt
-import DeduceProgramming1
+import DeduceProgramming
 import DeduceIntroProof
-import Set
+import Base
 import List
 
 /* ~/~ begin <<deduce-more-proof.en#algebra_example>>[init] */
@@ -11,18 +11,8 @@ proof
   arbitrary x:UInt
   equations
         (1 + x) * x
-      = x * (1 + x)        by uint_mult_commute
-  ... = x * 1 + x * x      by replace uint_dist_mult_add.
-  ... = x * x + x * 1      by uint_add_commute
-  ... = x * x + x          by .
-end
-/* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#modus_ponens_example>>[init] */
-theorem modus_ponens_example: all x:UInt. max(x, 1 + x) = 1 + x
-proof
-  arbitrary x:UInt
-  have: x ≤ 1 + x   by uint_less_equal_add_left
-  conclude max(x, 1 + x) = 1 + x  by apply uint_max_equal_greater_right to recall x ≤ 1 + x
+      = x + x * x          by replace uint_dist_mult_add_right.
+  ... = x * x + x          by uint_add_commute
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#assume_example>>[init] */
@@ -39,12 +29,6 @@ proof
       conclude false by expand len in len_zero
     }
   }
-end
-/* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#prove_true>>[init] */
-theorem prove_true: true
-proof
-  .
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#false_explosion>>[init] */
@@ -68,6 +52,90 @@ proof
           node(n, xs') ++ []
         = node(n, xs' ++ [])    by expand operator++.
     ... = node(n, xs')          by replace IH.
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#ex_or_commute>>[init] */
+theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
+proof
+  arbitrary P:bool, Q:bool
+  assume pq
+  cases pq
+  case p {
+    conclude Q or P by p
+  }
+  case q {
+    conclude Q or P by q
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#contains_append>>[init] */
+theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
+  if contains(xs ++ ys, z)
+  then contains(xs, z) or contains(ys, z)
+proof
+  arbitrary T:type
+  induction List<T>
+  case [] {
+    arbitrary ys:List<T>, z:T
+    expand operator++
+    assume z_in_ys
+    z_in_ys
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<T>, z:T
+    expand operator++ | contains
+    assume prem: x = z or contains(xs' ++ ys, z)
+    show x = z or contains(xs', z) or contains(ys, z)
+    cases prem
+    case: x = z {
+      recall x = z
+    }
+    case z_in_xs_ys {
+      have IH_conc: contains(xs', z) or contains(ys, z) by apply IH to z_in_xs_ys
+      IH_conc
+    }
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#de_morgan_variant>>[init] */
+theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
+proof
+  arbitrary P:bool, Q:bool
+  assume not_pq: not (P or Q)
+
+  have: not P
+  proof
+    assume: P
+    have pq: P or Q   by recall P
+    contradict pq, not_pq    
+  end
+
+  have: not Q
+  proof
+    assume: Q
+    have pq: P or Q   by recall Q
+    contradict pq, not_pq    
+  end
+    
+  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#remove_xy>>[init] */
+theorem remove_xy: all x:UInt, y:UInt. remove([x], y) = [x] or remove([x],y) = []
+proof
+  arbitrary x:UInt, y:UInt
+  expand remove
+  cases ex_mid[x = y]
+  case xy: x = y {
+    have xy_true: (x = y) = true by apply eq_true to xy
+    replace xy_true.
+  }
+  case not_xy: not (x = y) {
+    have xy_false: (x = y) = false by apply eq_false to not_xy
+    replace xy_false
+    show node(x, remove(@[]<UInt>, y)) = [x]
+    expand remove.
   }
 end
 /* ~/~ end */

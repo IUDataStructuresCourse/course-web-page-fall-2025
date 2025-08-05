@@ -1,9 +1,14 @@
 /* ~/~ begin <<deduce-intro-proof.en#DeduceIntroProof.pf>>[init] */
 import UInt
-import DeduceProgramming1
-import DeduceProgramming2
-import Set
+import DeduceProgramming
+import List
 
+/* ~/~ begin <<deduce-intro-proof.en#prove_true>>[init] */
+theorem prove_true: true
+proof
+  .
+end
+/* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#len_empty>>[init] */
 theorem len_empty: 0 = len(Empty)
 proof
@@ -41,10 +46,10 @@ theorem if_commute: all P:bool, Q:bool, R:bool.
 proof
   arbitrary P:bool, Q:bool, R:bool
   assume pqr: if P then if Q then R
-  assume q: Q
-  assume p: P
-  have qr: if Q then R  by apply pqr to p
-  apply qr to q
+  assume: Q
+  assume: P
+  have qr: if Q then R  by apply pqr to (recall P)
+  apply qr to (recall Q)
 end  
 /* ~/~ end */
 /* ~/~ begin <<deduce-intro-proof.en#ex_and>>[init] */

@@ -9,59 +9,12 @@ proof
   arbitrary x:UInt
   equations
         (1 + x) * x
-      = x * (1 + x)        by uint_mult_commute
-  ... = x * 1 + x * x      by replace uint_dist_mult_add.
-  ... = x * x + x * 1      by uint_add_commute
-  ... = x * x + x          by .
+      = x + x * x          by replace uint_dist_mult_add_right.
+  ... = x * x + x          by uint_add_commute
 end
 ```
 
 Concepts:
-* [`true`](https://jsiek.github.io/deduce/pages/reference.html#true-formula) formula
-* [period](https://jsiek.github.io/deduce/pages/reference.html#period-proof-of-true)
-* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
-* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
-
-Example:
-```{.deduce^#prove_true}
-theorem prove_true: true
-proof
-  .
-end
-```
-
-Example:
-```{.deduce^#false_explosion}
-theorem false_explosion: if false then 0 = 1
-proof
-  assume: false
-  conclude 0 = 1 by recall false
-end
-```
-
-Concepts:
-* [`if`-`then`](https://jsiek.github.io/deduce/pages/reference.html#if-then-conditional-formula) formula
-* [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement) proof
-* [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
-* [`recall`](https://jsiek.github.io/deduce/pages/reference.html#recall-proof) proof
-
-From `lib/UInt.thm`:
-```
-max_equal_greater_right: all x:UInt, y:UInt. if x ≤ y then max(x, y) = y
-```
-
-Example:
-```{.deduce^#modus_ponens_example}
-theorem modus_ponens_example: all x:UInt. max(x, 1 + x) = 1 + x
-proof
-  arbitrary x:UInt
-  have: x ≤ 1 + x   by uint_less_equal_add_left
-  conclude max(x, 1 + x) = 1 + x  by apply uint_max_equal_greater_right to recall x ≤ 1 + x
-end
-```
-
-Concepts:
-* [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume) proof
 * [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
 * [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
 * [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
@@ -106,20 +59,152 @@ proof
 end
 ```
 
+Concepts:
+* `or` formulas
+* `cases`
+* implicit `or` introduction
+
+```{.deduce^#ex_or_commute}
+theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
+proof
+  arbitrary P:bool, Q:bool
+  assume pq
+  cases pq
+  case p {
+    conclude Q or P by p
+  }
+  case q {
+    conclude Q or P by q
+  }
+end
+```
+
+```{.deduce^#contains_append}
+theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
+  if contains(xs ++ ys, z)
+  then contains(xs, z) or contains(ys, z)
+proof
+  arbitrary T:type
+  induction List<T>
+  case [] {
+    arbitrary ys:List<T>, z:T
+    expand operator++
+    assume z_in_ys
+    z_in_ys
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<T>, z:T
+    expand operator++ | contains
+    assume prem: x = z or contains(xs' ++ ys, z)
+    show x = z or contains(xs', z) or contains(ys, z)
+    cases prem
+    case: x = z {
+      recall x = z
+    }
+    case z_in_xs_ys {
+      have IH_conc: contains(xs', z) or contains(ys, z) by apply IH to z_in_xs_ys
+      IH_conc
+    }
+  }
+end
+```
+
+Concepts:
+* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
+
+Example:
+```{.deduce^#false_explosion}
+theorem false_explosion: if false then 0 = 1
+proof
+  assume: false
+  conclude 0 = 1 by recall false
+end
+```
+
+Concepts:
+* [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula: `not P` is short for `if P then false`.
+* To prove `not P`, `assume P` then prove `false`.
+* [`contradict`](https://jsiek.github.io/deduce/pages/reference.html#contradict-proof) proof
+
+```{.deduce^#de_morgan_variant}
+theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
+proof
+  arbitrary P:bool, Q:bool
+  assume not_pq: not (P or Q)
+
+  have: not P
+  proof
+    assume: P
+    have pq: P or Q   by recall P
+    contradict pq, not_pq    
+  end
+
+  have: not Q
+  proof
+    assume: Q
+    have pq: P or Q   by recall Q
+    contradict pq, not_pq    
+  end
+    
+  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
+end
+```
+
+Concepts
+* `ex_mid`  law of excluded middle
+* `eq_true` combine with `replace` to resolve `if`-`then` terms
+* `eq_false` combine with `replace` to resolve `if`-`then` terms
+
+Here's the definition of `remove` from `List.pf`:
+```
+recursive remove<T>(List<T>, T) -> List<T> {
+  remove(empty, y) = empty
+  remove(node(x, xs'), y) =
+    if x = y then
+      xs'
+    else
+      node(x, remove(xs', y))
+}
+```
+
+Example proof using `ex_mid`, `eq_true`, and `eq_false`.
+
+```{.deduce^#remove_xy}
+theorem remove_xy: all x:UInt, y:UInt. remove([x], y) = [x] or remove([x],y) = []
+proof
+  arbitrary x:UInt, y:UInt
+  expand remove
+  cases ex_mid[x = y]
+  case xy: x = y {
+    have xy_true: (x = y) = true by apply eq_true to xy
+    replace xy_true.
+  }
+  case not_xy: not (x = y) {
+    have xy_false: (x = y) = false by apply eq_false to not_xy
+    replace xy_false
+    show node(x, remove(@[]<UInt>, y)) = [x]
+    expand remove.
+  }
+end
+```
+
 <!--
 ```{.deduce^file=DeduceIntroProof2.pf}
 import UInt
-import DeduceProgramming1
+import DeduceProgramming
 import DeduceIntroProof
-import Set
+import Base
 import List
 
 <<algebra_example>>
-<<modus_ponens_example>>
 <<assume_example>>
-<<prove_true>>
 <<false_explosion>>
 <<list_append_empty>>
+<<ex_or_commute>>
+<<contains_append>>
+<<de_morgan_variant>>
+<<remove_xy>>
 ```
 -->
 

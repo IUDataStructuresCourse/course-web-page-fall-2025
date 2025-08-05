@@ -375,15 +375,16 @@ work with functions of the type `fn UInt -> T`.
 <<area>>
 <<area12>>
 
+
+import List
+
 <<Fruit2>>
 <<banana>>
 <<switchFruit2>>
 <<assertR4>>
-<<List>>
 <<List123>>
 <<List456>>
 <<List123456>>
-<<length>>
 <<assertIfTrue>>
 <<search>>
 <<searchExamples>>
