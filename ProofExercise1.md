@@ -22,7 +22,7 @@ These exercises are meant for you to practice the following logical concepts in 
 
 ## Problems
 
-(1) Complete the following proof.
+(1) Complete the following proof. The append function `++` is defined in `lib/List.pf`.
 
 ```{.deduce^#append_xy}
 theorem append_xy: all T:type. all x:T, y:T.

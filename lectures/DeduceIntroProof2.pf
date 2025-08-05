@@ -6,13 +6,17 @@ import Base
 import List
 
 /* ~/~ begin <<deduce-more-proof.en#algebra_example>>[init] */
-theorem algebra_example: all x:UInt. (1 + x) * x = x * x + x
+theorem algebra_example: all x:UInt. (1 + x)*(2 + x) = x^2 + 3*x + 2
 proof
   arbitrary x:UInt
   equations
-        (1 + x) * x
-      = x + x * x          by replace uint_dist_mult_add_right.
-  ... = x * x + x          by uint_add_commute
+        (1 + x)*(2 + x)
+      = (1 + x)*2 + (1 + x)*x  by replace uint_dist_mult_add.
+  ... = 2 + x*2 + x + x^2      by replace uint_dist_mult_add_right.
+  ... = 2 + 2*x + x + x^2      by replace uint_mult_commute[x,2].
+  ... = 2 + #(2 + 1)*x# + x^2  by replace uint_dist_mult_add_right[2,1,x].
+  ... = 3*x + 2 + x^2          by replace uint_add_commute[2,3*x].
+  ... = x^2 + 3*x + 2          by replace uint_add_commute[3*x + 2, x^2].
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#switch_example>>[init] */
