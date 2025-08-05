@@ -15,29 +15,6 @@ end
 ```
 
 Concepts:
-* [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
-* [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
-* [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
-
-Example:
-```{.deduce^#assume_example}
-theorem assume_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
-proof
-  arbitrary xs:UIntList
-  assume premise: len(xs) = 0
-  switch xs {
-    case Empty {
-      .
-    }
-    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
-      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
-      conclude false by expand len in len_zero
-    }
-  }
-end
-```
-
-Concepts:
 * `induction` on lists
 
 Example:
@@ -55,6 +32,29 @@ proof
           node(n, xs') ++ []
         = node(n, xs' ++ [])    by expand operator++.
     ... = node(n, xs')          by replace IH.
+  }
+end
+```
+
+Concepts:
+* [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
+* [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
+* [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
+
+Example:
+```{.deduce^#switch_example}
+theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
+proof
+  arbitrary xs:UIntList
+  assume premise: len(xs) = 0
+  switch xs {
+    case Empty {
+      .
+    }
+    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
+      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
+      conclude false by expand len in len_zero
+    }
   }
 end
 ```
@@ -198,7 +198,7 @@ import Base
 import List
 
 <<algebra_example>>
-<<assume_example>>
+<<switch_example>>
 <<false_explosion>>
 <<list_append_empty>>
 <<ex_or_commute>>

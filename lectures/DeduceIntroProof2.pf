@@ -15,8 +15,8 @@ proof
   ... = x * x + x          by uint_add_commute
 end
 /* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#assume_example>>[init] */
-theorem assume_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
+/* ~/~ begin <<deduce-more-proof.en#switch_example>>[init] */
+theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
 proof
   arbitrary xs:UIntList
   assume premise: len(xs) = 0
