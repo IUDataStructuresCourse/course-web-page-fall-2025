@@ -8,6 +8,7 @@
 * logical `not` and the `contradict` proof method
 * `equations`
 * the `some` quantifier, `obtain`, and `choose`
+* resolve `if` terms using `ex_mid`, `eq_true`, and `eq_false` from `Base.thm`
 
 ## Problems
 
@@ -56,3 +57,27 @@ proof
   ?
 end
 ```
+
+Prove that `remove_all(xs, y)` function really removes the specified
+element `y` from the list `xs`. Hint: in the case for `xs = node(x,xs')`,
+use `ex_mid` from `Base.thm` to consider the two cases, `x = y` or `not (x = y)`.
+Also use `eq_true`, and `eq_false` from `Base.thm` to resolve the `if` term
+inside `remove_all`.
+
+```
+theorem remove_all_correct: <T> all y:T, xs:List<T>.
+  not contains(remove_all(xs, y), y)
+proof
+  ?
+end
+```
+
+Write down an alternative definition of `remove_all` that satisfies
+the above theorem but still has a bug.
+
+Come up with a formula that would be false for your buggy version of
+`remove_all` but that would be true for the version of `remove_all` in
+`List.thm`.
+
+
+

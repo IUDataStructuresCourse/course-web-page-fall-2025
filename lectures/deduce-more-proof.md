@@ -176,7 +176,8 @@ recursive remove<T>(List<T>, T) -> List<T> {
 Example proof using `ex_mid`, `eq_true`, and `eq_false`.
 
 ```{.deduce^#remove_xy}
-theorem remove_xy: all x:UInt, y:UInt. remove([x], y) = [x] or remove([x],y) = []
+theorem remove_xy: all x:UInt, y:UInt.
+  remove([x], y) = [x] or remove([x],y) = []
 proof
   arbitrary x:UInt, y:UInt
   expand remove
