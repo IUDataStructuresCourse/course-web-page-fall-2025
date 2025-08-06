@@ -9,6 +9,7 @@
 * `equations`
 * the `some` quantifier, `obtain`, and `choose`
 * resolve `if` terms using `ex_mid`, `eq_true`, and `eq_false` from `Base.thm`
+* `define` in terms and proofs, theorems `first_pair`, `second_pair`, and `pair_first_second` in `Pair.thm`.
 
 ## Problems
 
