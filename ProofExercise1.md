@@ -13,12 +13,12 @@ As a reminder, you can refer to the following
 ## Learning Goals
 
 These exercises are meant for you to practice the following logical concepts in Deduce:
-* `all` formulas, `arbitrary`, and instantiation.
-* `if`-`then` formulas, `assume`, `apply`
-* `and` formulas, `conjunct`, combining proofs with comma.
-* `expand` a definition
-* `replace` equals for equals
-* forward reasoning using `have`
+* [`all` formulas](https://jsiek.github.io/deduce/pages/reference.html#all-universal-quantifier), [`arbitrary`](https://jsiek.github.io/deduce/pages/reference.html#arbitrary-forall-introduction), and [proof instantiation](https://jsiek.github.io/deduce/pages/reference.html#instantiation-proof).
+* [`if`-`then` formulas](https://jsiek.github.io/deduce/pages/reference.html#if-then-conditional-formula), [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume), [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens)
+* [`and` formulas](https://jsiek.github.io/deduce/pages/reference.html#and-logical-conjunction), [`conjunct`](https://jsiek.github.io/deduce/pages/reference.html#conjunct), combining proofs with [comma](https://jsiek.github.io/deduce/pages/reference.html#comma-logical-and-introduction).
+* [`expand`](https://jsiek.github.io/deduce/pages/reference.html#expand-proof) a definition
+* [`replace`](https://jsiek.github.io/deduce/pages/reference.html#replace-proof) equals for equals
+* forward reasoning using [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement)
 
 ## Problems
 
