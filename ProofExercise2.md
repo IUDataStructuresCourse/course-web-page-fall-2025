@@ -6,7 +6,7 @@
 * [`induction`](https://jsiek.github.io/deduce/pages/reference.html#induction) proof method
 * [logical `or`](https://jsiek.github.io/deduce/pages/reference.html#or-logical-disjunction) and the [`cases`](https://jsiek.github.io/deduce/pages/reference.html#cases-disjunction-elimination) proof method
 * [logical `not`](https://jsiek.github.io/deduce/pages/reference.html#not) and the [`contradict`](https://jsiek.github.io/deduce/pages/reference.html#contradict-proof) proof method
-* `equations`
+* [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
 * [the `some` quantifier](https://jsiek.github.io/deduce/pages/reference.html#some-formula), [`obtain`](https://jsiek.github.io/deduce/pages/reference.html#obtain-proof), and [`choose`](https://jsiek.github.io/deduce/pages/reference.html#choose-proof)
 * resolve `if` terms using `ex_mid`, `eq_true`, and `eq_false` from `Base.thm`
 * [`define` in terms](https://jsiek.github.io/deduce/pages/reference.html#define-term) and [`define` in proofs](https://jsiek.github.io/deduce/pages/reference.html#define-proof), theorems `first_pair`, `second_pair`, and `pair_first_second` in `Pair.thm`.
