@@ -8,7 +8,7 @@
 * [logical `not`](https://jsiek.github.io/deduce/pages/reference.html#not) and the [`contradict`](https://jsiek.github.io/deduce/pages/reference.html#contradict-proof) proof method
 * [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
 * [the `some` quantifier](https://jsiek.github.io/deduce/pages/reference.html#some-formula), [`obtain`](https://jsiek.github.io/deduce/pages/reference.html#obtain-proof), and [`choose`](https://jsiek.github.io/deduce/pages/reference.html#choose-proof)
-* resolve [`if`-`then`-`else` terms](https://jsiek.github.io/deduce/pages/reference.html#if-then-else-term) using `ex_mid`, `eq_true`, and `eq_false` from `Base.thm`
+* resolve [`if`-`then`-`else` terms](https://jsiek.github.io/deduce/pages/reference.html#if-then-else-term) using `ex_mid` and `eq_false` from `Base.thm`
 * [`define` in terms](https://jsiek.github.io/deduce/pages/reference.html#define-term) and [`define` in proofs](https://jsiek.github.io/deduce/pages/reference.html#define-proof), theorems `first_pair`, `second_pair`, and `pair_first_second` in `Pair.thm`.
 
 ## Problems
@@ -59,11 +59,12 @@ proof
 end
 ```
 
-(5) Prove that `remove_all(xs, y)` function really removes the specified
-element `y` from the list `xs`. Hint: in the case for `xs = node(x,xs')`,
-use `ex_mid` from `Base.thm` to consider the two cases, `x = y` or `not (x = y)`.
-Also use `eq_true`, and `eq_false` from `Base.thm` to resolve the `if` term
-inside `remove_all`.
+(5) Prove that `remove_all(xs, y)` function really removes the
+specified element `y` from the list `xs`. Hint: in the case for `xs =
+node(x,xs')`, use `ex_mid` from `Base.thm` to consider the two cases,
+`x = y` or `not (x = y)`.  In the case for `x = y`, use `replace` to
+resolve the `if` term inside `remove_all`. In the later case, use
+`eq_false` from `Base.thm` and `replace` to resolve the `if` term.
 
 ```
 theorem remove_all_correct: <T> all y:T, xs:List<T>.
