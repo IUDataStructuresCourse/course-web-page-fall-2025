@@ -3,16 +3,37 @@
 The Deduce system has two parts: a programming language and a proof
 language. The user of Deduce writes some functions in the Deduce
 programming language and then writes proofs in the Deduce proof
-language about the correctness of their funnctions. The Deduce system
+language about the correctness of their functions. The Deduce system
 checks that the proofs are correct.
 
 In this lecture we introduce the Deduce programming language.
 
 # Programming in Deduce
 
-The main way to represent data in Deduce is with `union` types. 
+## Functions (`fun`) (non-recursive)
+
+Functions are created with an statement that starts with the `fun`
+keyword, followed by the function name, the parameter names and their
+types (comma separated and enclosed in parentheses), then the body of
+the function (enclosed in braces).  For example, the following defines
+a function for computing the area of a rectangle.
+
+```{.deduce^#area}
+fun area(h : UInt, w : UInt) {
+  h * w
+}
+```
+
+To call a function, apply it to the appropriate number and type of
+arguments.
+
+```{.deduce^#area12}
+assert area(3, 4) = 12
+```
 
 ## A Fruitful Example
+
+The main way to represent data in Deduce is with `union` types. 
 
 The following statement defines a union type named `Fruit` and it
 defines three kinds of fruit: apples, oranges, and bananas.
@@ -52,22 +73,22 @@ or not.
 ```{.deduce^#banana}
 define f3 : Fruit2 = banana(false)
 define f4 : Fruit2 = banana(true)
+define f5 : Fruit2 = apple
 ```
 
 We can inspect and dispatch on values of union type using Deduce's
-`switch` statement. The following statement inspects the fruit `f4`
-and figures out whether it is rotten or not. In the case for `banana`,
-Deduce initializes the `r` variable to `true` (because `f4` is
-`banana(true)`).
+`switch` statement. The following function inspects a fruit
+and figures out whether it is rotten or not.
 
 
 ```{.deduce^#switchFruit2}
-define r4 : bool = 
-    switch f4 {
-      case apple { false }
-      case orange { false }
-      case banana(r) { r }
-    }
+fun rotten(f : Fruit2) {
+  switch f {
+    case apple { false }
+    case orange { false }
+    case banana(r) { r }
+  }
+}
 ```
 
 ## Assert
@@ -76,7 +97,9 @@ To check whether the result of an term produces `true`, use the `assert` stateme
 It will halt with an error if the term produces `false`.
 
 ```{.deduce^#assertR4}
-assert r4
+assert rotten(f3) = false
+assert rotten(f4) = true
+assert rotten(f5) = false
 ```
 
 ## Linked Lists via unions
@@ -251,24 +274,6 @@ print 5
 
 The output is `5`.
 
-
-## Functions (`fun`) (non-recursive)
-
-Functions are created with an term that starts with the `fun`
-keyword, followed by parameter names and their types, then the body of
-the function enclosed in braces.  For example, the following defines a
-function for computing the area of a rectangle.
-
-```{.deduce^#area}
-define area = fun h : UInt, w : UInt { h * w }
-```
-
-To call a function, apply it to the appropriate number and type of
-arguments.
-
-```{.deduce^#area12}
-assert area(3, 4) = 12
-```
 
 ## Pairs
 

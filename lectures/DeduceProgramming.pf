@@ -36,7 +36,9 @@ assert len(L) = 3
 print 5
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#area>>[init] */
-define area = fun h : UInt, w : UInt { h * w }
+fun area(h : UInt, w : UInt) {
+  h * w
+}
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#area12>>[init] */
 assert area(3, 4) = 12
@@ -55,17 +57,21 @@ union Fruit2 {
 /* ~/~ begin <<deduce-programming.en#banana>>[init] */
 define f3 : Fruit2 = banana(false)
 define f4 : Fruit2 = banana(true)
+define f5 : Fruit2 = apple
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#switchFruit2>>[init] */
-define r4 : bool = 
-    switch f4 {
-      case apple { false }
-      case orange { false }
-      case banana(r) { r }
-    }
+fun rotten(f : Fruit2) {
+  switch f {
+    case apple { false }
+    case orange { false }
+    case banana(r) { r }
+  }
+}
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#assertR4>>[init] */
-assert r4
+assert rotten(f3) = false
+assert rotten(f4) = true
+assert rotten(f5) = false
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List123>>[init] */
 define list_123 : List<UInt> = node(1, node(2, node(3, empty)))
