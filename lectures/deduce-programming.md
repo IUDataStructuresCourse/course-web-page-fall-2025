@@ -10,6 +10,21 @@ In this lecture we introduce the Deduce programming language.
 
 # Programming in Deduce
 
+## Import
+
+The `import` declaration makes available the contents of another
+Deduce file in the current file. For example, you can import the
+contents of `lib/UInt.pf` as follows
+
+```{.deduce^#importUInt}
+import UInt
+```
+
+If you need to import a file from some other directory, use
+the `--dir directory-name` flag with `deduce.py` to specify
+that other directory.
+
+
 ## Functions (`fun`) (non-recursive)
 
 Functions are created with an statement that starts with the `fun`
@@ -248,20 +263,6 @@ list.  This is because the depth of the recursion is n (in the worst
 case) and the `search` function does at most a constant amount of work
 in each call (the comparison `x = y`, the `if`, and the addition `1 +`).
 
-
-## Import
-
-The `import` declaration makes available the contents of another
-Deduce file in the current file. For example, you can import the
-contents of `lib/UInt.pf` as follows
-
-```{.deduce^#importUInt}
-import UInt
-```
-
-If you need to import a file from some other directory, use
-the `--dir directory-name` flag with `deduce.py` to specify
-that other directory.
 
 ## Printing Values
 
