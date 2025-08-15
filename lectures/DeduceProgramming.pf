@@ -60,7 +60,7 @@ define f4 : Fruit2 = banana(true)
 define f5 : Fruit2 = apple
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#switchFruit2>>[init] */
-fun rotten(f : Fruit2) {
+fun is_rotten(f : Fruit2) {
   switch f {
     case apple { false }
     case orange { false }
@@ -69,9 +69,9 @@ fun rotten(f : Fruit2) {
 }
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#assertR4>>[init] */
-assert rotten(f3) = false
-assert rotten(f4) = true
-assert rotten(f5) = false
+assert is_rotten(f3) = false
+assert is_rotten(f4) = true
+assert is_rotten(f5) = false
 /* ~/~ end */
 /* ~/~ begin <<deduce-programming.en#List123>>[init] */
 define list_123 : List<UInt> = node(1, node(2, node(3, empty)))

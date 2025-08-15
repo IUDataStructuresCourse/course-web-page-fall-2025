@@ -97,7 +97,7 @@ and figures out whether it is rotten or not.
 
 
 ```{.deduce^#switchFruit2}
-fun rotten(f : Fruit2) {
+fun is_rotten(f : Fruit2) {
   switch f {
     case apple { false }
     case orange { false }
@@ -112,9 +112,9 @@ To check whether the result of an term produces `true`, use the `assert` stateme
 It will halt with an error if the term produces `false`.
 
 ```{.deduce^#assertR4}
-assert rotten(f3) = false
-assert rotten(f4) = true
-assert rotten(f5) = false
+assert is_rotten(f3) = false
+assert is_rotten(f4) = true
+assert is_rotten(f5) = false
 ```
 
 ## Linked Lists via unions
