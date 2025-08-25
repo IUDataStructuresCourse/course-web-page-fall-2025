@@ -25,6 +25,18 @@ the `--dir directory-name` flag with `deduce.py` to specify
 that other directory.
 
 
+## Printing Values
+
+You can ask Deduce to print a value to standard output using the
+`print` statement.
+
+```{.deduce^#printFive}
+print 5
+```
+
+The output is `5`.
+
+
 ## Functions (`fun`) (non-recursive)
 
 Functions are created with an statement that starts with the `fun`
@@ -43,7 +55,7 @@ To call a function, apply it to the appropriate number and type of
 arguments.
 
 ```{.deduce^#area12}
-assert area(3, 4) = 12
+print(area(3, 4))
 ```
 
 ## A Fruitful Example
@@ -262,18 +274,6 @@ The time complexity of `search` is O(n) where n is the length of the
 list.  This is because the depth of the recursion is n (in the worst
 case) and the `search` function does at most a constant amount of work
 in each call (the comparison `x = y`, the `if`, and the addition `1 +`).
-
-
-## Printing Values
-
-You can ask Deduce to print a value to standard output using the
-`print` statement.
-
-```{.deduce^#printFive}
-print 5
-```
-
-The output is `5`.
 
 
 ## Pairs

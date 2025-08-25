@@ -13,26 +13,15 @@
 
 ## Introduce course AI's
 
-* Chavan, Dhruv (dvchavan)
 * Cloteaux, Matei (mcloteau)
-* Donato, Lillie (mdonato)
-* Ghafoor, Javaria (jghafoor)
-* Gonsalves, Shulin (shugons)
 * Josenhans, Calvin (cjosenha)
-* Ishoel, Ashley (aarolson)
-* Shetty, Darshal (dcshetty)
-* Sivakumar, Aniruthan (ansiva)
 
 
 ## Course web page, syllabus, schedule (due dates, etc.)
 
-    https://iudatastructurescourse.github.io/course-web-page-spring-2025/
+    https://iudatastructurescourse.github.io/course-web-page-fall-2025/
 
-## Participation:
-
-* Write your name on a "name tent" and place it at the front of your desk
-
-* Slack: ask and answer questions
+* Slack: ask and answer questions between classes
 
 
 ## Suggested weekly schedule (4 credits * 3 = 12 hours of outside-class work)
@@ -86,9 +75,9 @@
 
 * Optional: learn github for managing group work
 
-* ChatGPT/AI: you can use it but beware that if you use it to
-  avoid learning, then you are likely to perform poorly on the
-  midterm exam and final exam (60% of the course grade).
+* ChatGPT/AI: you can use it but beware that if you use it to avoid
+  learning, then you are likely to perform poorly on the midterm exam
+  and final exam (which together are 60% of the course grade).
 
 ## Lab 1: Linear Search and Binary Search
 
