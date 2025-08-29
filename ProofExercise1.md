@@ -22,7 +22,66 @@ These exercises are meant for you to practice the following logical concepts in 
 
 ## Problems
 
-(1) Complete the following proof. The append function `++` is defined in `lib/List.pf`.
+### A quick refresher
+
+
+(1) Complete the following proof.
+```{.deduce_^#always_true}
+
+fun always_true(b:bool) {
+  true
+}
+
+theorem always_true_equal : all x :bool.
+  always_true(x) = true
+proof
+  ?
+end
+```
+
+
+(2) Complete the given proof of the theorem about these functions.
+
+```{.deduce^#h_plus_six}
+fun f(x:UInt) { x + 2 }
+
+fun g(x:UInt) { f(x) + 1 }
+
+fun h(x:UInt) { g(x) + 3}
+
+theorem h_plus_six : all x : UInt.
+  h(x) = x + 6
+proof
+  ?
+end
+```
+
+(3) Consider the below function `do_nothing`. Complete the proof of the theorem `do_nothing_equal` in two different ways. One of your solutions should use `expand`, and the other should use `replace`. 
+
+```{.deduce^#do_nothing}
+fun do_nothing(b:bool) {
+  b
+}
+
+theorem do_nothing_equal :
+  all x : bool, y : bool.
+  if x = y then do_nothing(x) = do_nothing(y)
+proof
+  arbitrary x : bool, y : bool
+  ?
+end
+
+theorem do_nothing_equal' :
+  all x : bool, y : bool.
+  if x = y then do_nothing(x) = do_nothing(y)
+proof
+  arbitrary x : bool, y : bool
+  ?
+end
+```
+
+
+(4) Complete the following proof. The append function `++` is defined in `lib/List.pf`.
 
 ```{.deduce^#append_xy}
 theorem append_xy: all T:type. all x:T, y:T.
@@ -32,7 +91,7 @@ proof
 end
 ```
 
-(2) Prove that `[1] ++ [2] = [1, 2]` by using the `append_xy` theorem.
+(5) Prove that `[1] ++ [2] = [1, 2]` by using the `append_xy` theorem.
 
 ```{.deduce^#append_1_2}
 theorem append_1_2:
@@ -42,7 +101,7 @@ proof
 end
 ```
 
-(3) Prove that if `xs = []`, then `length(xs) = 0`.
+(6) Prove that if `xs = []`, then `length(xs) = 0`.
 
 ```{.deduce^#equal_empty_length_zero}
 theorem equal_empty_length_zero: all T:type, xs:List<T>.
@@ -53,7 +112,7 @@ proof
 end
 ```
 
-(4) Prove that `if P and Q then R` implies `if Q then if P then R`.
+(7) Prove that `if P and Q then R` implies `if Q then if P then R`.
 
 ```{.deduce^#ex_all_if_and}
 theorem ex_all_if_and: all P:bool, Q:bool, R:bool.
@@ -63,7 +122,7 @@ proof
 end
 ```
 
-(5) Prove that `if P  then Q` and `if Q then R` implies `if P then R`.
+(8) Prove that `if P  then Q` and `if Q then R` implies `if P then R`.
 
 ``````{.deduce^#ex_if3}
 theorem ex_if3: all P:bool, Q:bool, R:bool.
@@ -74,10 +133,20 @@ proof
 end
 ```
 
-(6) Prove that if `if P then (if Q then R)` and `if P then Q` and also `P`, then `R`.
+(9) Prove that if `if P then (if Q then R)` and `if P then Q` and also `P`, then `R`.
 
 ```{.deduce^#ex_if_if}
 theorem ex_if_if: all P:bool, Q:bool, R:bool. if (if P then (if Q then R)) and (if P then Q) and P then R
+proof
+  ?
+end
+```
+
+(10) Prove the following theorem.
+
+```{.deduce^#fourth_equality}
+theorem fourth_equality : all a:UInt, b:UInt, c:UInt, d:UInt.
+  if a = b and b = c and a = d then c = d
 proof
   ?
 end
