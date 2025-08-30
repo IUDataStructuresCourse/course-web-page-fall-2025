@@ -51,7 +51,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | 11am    |                   |            | Jeremy         |             |        |
 | 12pm    |                   |            |                |             |        |
 | 1pm     |                   |            |                |             |        |
-| 2pm     |                   | Calvin     |                |             |        |
+| 2pm     | Matei             | Calvin     | Matei          |             |        |
 | 3pm     |                   |            |                |             | Calvin |
 | 4pm     | Jeremy            |            |                |             |        |
 | 5pm     |                   |            |                |             |        |
