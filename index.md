@@ -51,8 +51,8 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | 11am    |                   |            | Jeremy         |             |        |
 | 12pm    |                   |            |                |             |        |
 | 1pm     |                   |            |                |             |        |
-| 2pm     |                   |            |                |             |        |
-| 3pm     |                   |            |                |             |        |
+| 2pm     | Matei             | Calvin     | Matei          |             |        |
+| 3pm     |                   |            |                |             | Calvin |
 | 4pm     | Jeremy            |            |                |             |        |
 | 5pm     |                   |            |                |             |        |
 
@@ -75,7 +75,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Aug. 27    | [Arrays, Rotation, Testing](./lectures/array-rotation.md)    | Ch.1                                                         |                                                           |      |
 | Aug. 29    | —                                                            |                                                              | [Lab: Array Search and Testing](./Search)                 | [code](https://autograder.luddy.indiana.edu/web/project/1815), [test](https://autograder.luddy.indiana.edu/web/project/1810)     |
 | Sep. 1     | **Labor Day** (no class)                                     |                                                              |                                                           |      |
-| Sep. 3     | [Algorithm Analysis](./lectures/algo-analysis.md)            | Ch.2                                                         |                                                           |      |
+| Sep. 3     | [Algorithm Analysis](./lectures/algo-analysis.md)            | Ch.2                                                         |                                                           | [code](https://autograder.luddy.indiana.edu/web/project/1778)     |
 | Sep. 5     | —                                                            |                                                              | [Project: FloodIt!](./flood-it)                           |      |
 | Sep. 8     | [Algorithm Analysis, Merge Sort](./lectures/more-algo-analysis.md) | Ch.7 Sec.6                                                   |                                                           |      |
 | Sep. 10    | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5                                               | [Homework 1](./HW1.md)                                     |      |
