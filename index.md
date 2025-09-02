@@ -78,7 +78,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Sep. 3     | [Algorithm Analysis](./lectures/algo-analysis.md)            | Ch.2                                                         |                                                           |      |
 | Sep. 5     | —                                                            |                                                              | [Project: FloodIt!](./flood-it)                           |      |
 | Sep. 8     | [Algorithm Analysis, Merge Sort](./lectures/more-algo-analysis.md) | Ch.7 Sec.6                                                   |                                                           |      |
-| Sep. 10    | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5                                               | Homework: about big-O                                     |      |
+| Sep. 10    | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5                                               | [Homework 1](./HW1.md)                                     |      |
 | Sep. 12    | —                                                            |                                                              | Lab: [Merge Sort](./MergeSort.md)                         |      |
 | Sep. 15    | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html) |                                                           |      |
 | Sep. 17    | [Sorting: Insertion, Quick](./lectures/sorting.md)           | Ch.7 Sec.2,7                                                 | Homework: about algo. analysis                            |      |
