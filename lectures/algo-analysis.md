@@ -91,43 +91,48 @@ Proof rules:
 	 fix y arbitrary number
 	 y + y = 2y   (cause math)
 
-To prove ∀ x. P(x), 
-   (⇒∀) prove that P(y) is true for some unknown entity y.
-   (Induction) If x is a natural number, use induction:
-      * prove P(0)
-	  * prove that P(k) implies P(1+k) for an unknown number k.
+To prove ∀ x. P(x),
 
-(∀⇒) If you have an assumption ∀ x. P(x), then you known P(y)
-   for any choice of y.
+(∀-intro) prove that P(y) is true for some unknown entity y, or
+
+(Induction) If x is a natural number, use induction:
+   * prove P(0)
+   * prove that P(k) implies P(1+k) for an unknown number k.
+
+To use ∀ x. P(x)
+
+(∀-elim) If you already know ∀ x. P(x), then you know P(y) for any
+    choice of y.
 
 ## Example of ∀
 
-Theorem. ∀ n. n is even implies n + 2 is even.
-Proof.
- Let p be a arbitrary number. (⇒∀)
- Assume that p is even, that is, (∃k. 2 × k = p).
- So 2 × k₁ = p by (∃⇒)      (1)
- 
- We need to show that p + 2 is even, that is, (∃ k. 2 × k = p + 2).
- 
- Aside: We need prove an equation similar to 2 × k = p + 2 except with
- something else in the k position.
- Equation (1) has p on the right-hand side, so we could add 2 to both sides:
- 2 × k₁ + 2 = p + 2
- then factor out the 2
- 2 × (k₁ + 1) = p + 2             (2)
- and now we're in good shape because this equation is the same as 2 × k = p + 2
- except that we have (k₁ + 1) in place of k.
- Now back to the proof.
+    Theorem. ∀ n. n is even implies n + 2 is even.
+    Proof.
+     Let p be a arbitrary number. (⇒∀)
+     Assume that p is even, that is, (∃k. 2 × k = p).
+     So 2 × k₁ = p by (∃⇒)      (1)
 
- Choose k = k₁ + 1 and note that 2 × (k₁ + 1) = p + 2 by equation (2).
-QED.
+     We need to show that p + 2 is even, that is, (∃ k. 2 × k = p + 2).
 
-Theorem. 2 is even.
-Proof.
-0 is even because 2 × 0 = 0.
-2 is even by applying the above theorem and rule (∀⇒).
-QED.
+     Aside: We need prove an equation similar to 2 × k = p + 2 except with
+     something else in the k position.
+     Equation (1) has p on the right-hand side, so we could add 2 to both sides:
+     2 × k₁ + 2 = p + 2
+     then factor out the 2
+     2 × (k₁ + 1) = p + 2             (2)
+     and now we're in good shape because this equation is
+     the same as 2 × k = p + 2
+     except that we have (k₁ + 1) in place of k.
+     Now back to the proof.
+
+     Choose k = k₁ + 1 and note that 2 × (k₁ + 1) = p + 2 by equation (2).
+    QED.
+
+    Theorem. 2 is even.
+    Proof.
+    0 is even because 2 × 0 = 0.
+    2 is even by applying the above theorem and rule (∀-elim).
+    QED.
 
 
 ## Back to Big-O
