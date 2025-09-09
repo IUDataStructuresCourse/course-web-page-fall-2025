@@ -6,6 +6,9 @@ support code is in the following github repository.
 
 [https://github.com/IUDataStructuresCourse/merge-sort-student-support-code](https://github.com/IUDataStructuresCourse/merge-sort-student-support-code)
 
+
+You will submit both your implementation and your tests to the same [autograder](https://autograder.luddy.indiana.edu/) .
+
 ## Merge Sort
 
 Define a public `MergeSort` class in `MergeSort.java` with the
@@ -21,6 +24,15 @@ from low to high according to the `Comparable` ordering.
 The iterators `begin` and `end` should not be mutated, but of course
 you can clone them and mutate the clones.
 
+**Specification:** Let `S` be the unsorted sequence represented by the `begin` and `end` iterators,
+and call `S_sorted` the value of `S` after `sort` is called. The following must hold.
+
+1. (Ordering) If the sorted sequence is traversed from `begin` to `end` using successive calls to `Iterator.next()`, then for every two consecutive elements `a`, `b`, we have `a.compareTo(b) <= 0`.
+<!-- For all valid indices `i`, `j` with `0 <= i < j < S_sorted.length`: `S_sorted[i].compareTo(S_sorted[j]) <= 0` -->
+
+2. (Permutation) For any element `x`, it appears the same number of times in `S` as in `S_sorted`
+
+### Merge
 The Merge Sort algorithm relies on the Merge algorithm, which you should
 implement with the following method:
 
