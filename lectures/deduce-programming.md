@@ -58,7 +58,7 @@ arguments.
 print(area(3, 4))
 ```
 
-## A Fruitful Example
+## A Fruitful Example: `union` and `switch`
 
 The main way to represent data in Deduce is with `union` types. 
 
@@ -129,7 +129,7 @@ assert is_rotten(f4) = true
 assert is_rotten(f5) = false
 ```
 
-## Linked Lists via unions
+## Linked Lists via recursive unions
 
 A **linked list** is a data structure that represents a sequence of
 elements.  Each element is stored inside a node and each node also
