@@ -1,17 +1,3 @@
-Student in-class exercise: implement the SL-A version (without iterators).
-
-Solution:
-
-    public boolean equals(LinkedList<T> L, T other[]) {
-            int j = 0;
-            for (Node<T> i = L.head; i != null; i = i.next) {
-                if (j == other.length || i.data != other[j])
-                            return false;
-                    ++j;
-            }
-            return j == other.length;
-     }
-
 
 Student exercise: implement a `max` algorithm that returns the maximum
 element of a `Sequence`.

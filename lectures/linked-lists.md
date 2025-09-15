@@ -230,8 +230,6 @@ Here's the code for the A-A combination
             return j == s2.length;
     }
 
-Student in-class exercise: implement the SL-A version (without iterators).
-
 *Abstraction* is the act of removing characteristics that are not
 relevant to your immediate purpose while retaining the characteristics
 that are necessary.
@@ -269,7 +267,7 @@ many more!)
     ArrayList<Integer> A = ...
     equals(L, A)
 
-Student in-class exercise: implement a `max` algorithm that returns the maximum
+**Student in-class exercise:** implement a `max` algorithm that returns the maximum
 element of a `Sequence`.
 
     public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less);
@@ -280,8 +278,9 @@ Here's what you need to know about `BiPredicate`:
 	    boolean test(T t, U u);
 	}
     
-Student in-class exercise: implement Sequence using an array
-
+**Student in-class exercise:** implement the Sequence interface by
+creating a class named `Array` that internally uses a built-in Java
+array for storing the elements.
 
 Now the algorithms on `Sequence` (`find_first_equal`, `equals`, etc.)  can
 also be used with Array!
