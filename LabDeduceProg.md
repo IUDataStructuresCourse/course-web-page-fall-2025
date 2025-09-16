@@ -38,13 +38,13 @@ can keep your work for this class.
 5. In the 343 folder, create a file named `hello.pf`. This is your first deduce script!
 6.  Paste the following code block into the newly created file.
     ```
-    import Nat
+    import UInt
     define hello = 42
     print hello
     ```
 7. Now you should be able to click the deduce icon at the top right of your window
 and run the file!
-![](assets/deduce-demo/run.gif)
+![](assets/deduce-demo/run.png)
 8. You will probably see some error in the terminal that falls into one of 
 two categories.
   - If you see `ModuleNotFoundError: No module named 'lark.tree'`, you
@@ -74,12 +74,12 @@ for each of the functions you write.
 ### Sum the elements of a List
 
 Create a function named `sum` that adds up the elements of a list.  In
-particular, the elements are natural numbers, so they have type `Nat`.
-You will need to import the type `Nat` and operations, such as
-`operator +`, from `Nat.pf`, with the following `import` statement.
+particular, the elements are natural numbers, so they have type `UInt`.
+You will need to import the type `UInt` and operations, such as
+`operator +`, from `UInt.pf`, with the following `import` statement.
 
 ```
-import Nat
+import UInt
 ```
 
 You'll also need to import the `List` library.
@@ -91,7 +91,7 @@ import List
 Here's the skeleton for your `sum` function.
 
 ```
-recursive sum(List<Nat>) -> Nat {
+recursive sum(List<UInt>) -> UInt {
   FILL IN
 }
 ```
@@ -147,7 +147,7 @@ Consider the `sum` function that you created above.  We can change
 stores the total-so-far.
 
 ```
-recursive sum_accum(List<Nat>, Nat) -> Nat {
+recursive sum_accum(List<UInt>, UInt) -> UInt {
   sum_accum(empty, total) = total
   sum_accum(node(x, xs), total) = sum_accum(xs, x + total)
 }
@@ -179,7 +179,7 @@ Create a function named `cumulative_sum` that performs this operation.
 The `cumulative_sum` function should have the following type.
 
 ```
-cumulative_sum : List<Nat> -> List<Nat>
+cumulative_sum : List<UInt> -> List<UInt>
 ```
 
 Here is an example of using the `cumulative_sum` function.
@@ -202,7 +202,7 @@ is empty. To return two lists, use the `Pair` type which you can
 import from the `Pair` library.
 
 ```
-recursive search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
+recursive search(List<UInt>, UInt) -> Pair<List<UInt>, List<UInt> > {
   FILL IN
 }
 ```
