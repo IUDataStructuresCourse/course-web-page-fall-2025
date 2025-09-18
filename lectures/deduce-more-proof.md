@@ -1,4 +1,66 @@
 Concepts:
+* `or` formulas
+* `cases`
+* implicit `or` introduction
+
+```{.deduce^#ex_or_commute}
+theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
+proof
+  arbitrary P:bool, Q:bool
+  assume pq: P or Q
+  cases pq
+  case p {
+    conclude Q or P by p
+  }
+  case q {
+    conclude Q or P by q
+  }
+end
+```
+
+Concepts:
+* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
+
+Example:
+```{.deduce^#false_explosion}
+theorem false_explosion: if false then 0 = 1
+proof
+  assume: false
+  conclude 0 = 1 by recall false
+end
+```
+
+Concepts:
+* [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula: `not P` is short for `if P then false`.
+* To prove `not P`, `assume P` then prove `false`.
+* [`contradict`](https://jsiek.github.io/deduce/pages/reference.html#contradict-proof) proof
+
+```{.deduce^#de_morgan_variant}
+theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
+proof
+  arbitrary P:bool, Q:bool
+  assume not_pq: not (P or Q)
+
+  have: not P
+  proof
+    assume: P
+    have pq: P or Q   by recall P
+    contradict pq, not_pq    
+  end
+
+  have: not Q
+  proof
+    assume: Q
+    have pq: P or Q   by recall Q
+    contradict pq, not_pq    
+  end
+    
+  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
+end
+```
+
+Concepts:
 * Library of theorems about unsigned integers (`lib/UInt.thm`)
 * [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
 * Marking with `#` symbols to control `replace` and target right-hand side.
@@ -65,24 +127,7 @@ end
 ```
 
 Concepts:
-* `or` formulas
-* `cases`
-* implicit `or` introduction
-
-```{.deduce^#ex_or_commute}
-theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
-proof
-  arbitrary P:bool, Q:bool
-  assume pq
-  cases pq
-  case p {
-    conclude Q or P by p
-  }
-  case q {
-    conclude Q or P by q
-  }
-end
-```
+* Practice with `or` and `cases`.
 
 ```{.deduce^#contains_append}
 theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
@@ -114,47 +159,6 @@ proof
 end
 ```
 
-Concepts:
-* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
-* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
-
-Example:
-```{.deduce^#false_explosion}
-theorem false_explosion: if false then 0 = 1
-proof
-  assume: false
-  conclude 0 = 1 by recall false
-end
-```
-
-Concepts:
-* [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula: `not P` is short for `if P then false`.
-* To prove `not P`, `assume P` then prove `false`.
-* [`contradict`](https://jsiek.github.io/deduce/pages/reference.html#contradict-proof) proof
-
-```{.deduce^#de_morgan_variant}
-theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
-proof
-  arbitrary P:bool, Q:bool
-  assume not_pq: not (P or Q)
-
-  have: not P
-  proof
-    assume: P
-    have pq: P or Q   by recall P
-    contradict pq, not_pq    
-  end
-
-  have: not Q
-  proof
-    assume: Q
-    have pq: P or Q   by recall Q
-    contradict pq, not_pq    
-  end
-    
-  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
-end
-```
 
 Concepts
 * `ex_mid`  law of excluded middle
@@ -203,13 +207,13 @@ import DeduceIntroProof
 import Base
 import List
 
-<<algebra_example>>
-<<switch_example>>
-<<false_explosion>>
-<<list_append_empty>>
 <<ex_or_commute>>
-<<contains_append>>
+<<false_explosion>>
 <<de_morgan_variant>>
+<<algebra_example>>
+<<list_append_empty>>
+<<switch_example>>
+<<contains_append>>
 <<remove_xy>>
 ```
 -->
