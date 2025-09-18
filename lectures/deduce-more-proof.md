@@ -2,6 +2,7 @@ Concepts:
 * `or` formulas
 * `cases`
 * implicit `or` introduction
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 ```{.deduce^#ex_or_commute}
 theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
@@ -20,7 +21,6 @@ end
 
 Concepts:
 * [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
-* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 Example:
 ```{.deduce^#false_explosion}
