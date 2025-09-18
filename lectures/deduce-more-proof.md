@@ -82,28 +82,6 @@ end
 ```
 
 Concepts:
-* `induction` on lists
-
-Example:
-```{.deduce^#list_append_empty}
-theorem list_append_empty: <U> all xs :List<U>.
-  xs ++ [] = xs
-proof
-  arbitrary U:type
-  induction List<U>
-  case [] {
-    conclude @[]<U> ++ [] = []  by expand operator++.
-  }
-  case node(n, xs') assume IH: xs' ++ [] = xs' {
-    equations
-          node(n, xs') ++ []
-        = node(n, xs' ++ [])    by expand operator++.
-    ... = node(n, xs')          by replace IH.
-  }
-end
-```
-
-Concepts:
 * [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
 * [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
 * [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
@@ -122,6 +100,28 @@ proof
       have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
       conclude false by expand len in len_zero
     }
+  }
+end
+```
+
+Concepts:
+* `induction` on lists
+
+Example:
+```{.deduce^#list_append_empty}
+theorem list_append_empty: <U> all xs :List<U>.
+  xs ++ [] = xs
+proof
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    conclude @[]<U> ++ [] = []  by expand operator++.
+  }
+  case node(n, xs') assume IH: xs' ++ [] = xs' {
+    equations
+          node(n, xs') ++ []
+        = node(n, xs' ++ [])    by expand operator++.
+    ... = node(n, xs')          by replace IH.
   }
 end
 ```
