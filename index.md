@@ -206,7 +206,7 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 * Note: Autograder uses JUnit5.7.0, so please stick to this version for JUnit.
 
 * [Deduce](https://jsiek.github.io/deduce/index.html) Proof Checker
-
+    * Installing Deduce [video](https://youtu.be/BYNKPcXOQd4)
     * Introduction to Deduce [video](https://youtu.be/q0OMEPEOe-g).
     * Programming in Deduce [video](https://youtu.be/wH8nh1_1zZU).
     * Writing Proofs in Deduce (Part 1) [video](https://youtu.be/7sZInoabAp0).
