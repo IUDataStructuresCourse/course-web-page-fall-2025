@@ -1,79 +1,14 @@
 Concepts:
-* Library of theorems about unsigned integers (`lib/UInt.thm`)
-* [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
-* Marking with `#` symbols to control `replace` and target right-hand side.
-
-Example:
-```{.deduce^#algebra_example}
-theorem algebra_example: all x:UInt. (1 + x)*(2 + x) = x^2 + 3*x + 2
-proof
-  arbitrary x:UInt
-  equations
-        (1 + x)*(2 + x)
-      = (1 + x)*2 + (1 + x)*x  by replace uint_dist_mult_add.
-  ... = 2 + x*2 + x + x^2      by replace uint_dist_mult_add_right.
-  ... = 2 + 2*x + x + x^2      by replace uint_mult_commute[x,2].
-  ... = 2 + #(2 + 1)*x# + x^2  by replace uint_dist_mult_add_right[2,1,x].
-  ... = 3*x + 2 + x^2          by replace uint_add_commute[2,3*x].
-  ... = x^2 + 3*x + 2          by replace uint_add_commute[3*x + 2, x^2].
-end
-```
-
-Concepts:
-* `induction` on lists
-
-Example:
-```{.deduce^#list_append_empty}
-theorem list_append_empty: <U> all xs :List<U>.
-  xs ++ [] = xs
-proof
-  arbitrary U:type
-  induction List<U>
-  case [] {
-    conclude @[]<U> ++ [] = []  by expand operator++.
-  }
-  case node(n, xs') assume IH: xs' ++ [] = xs' {
-    equations
-          node(n, xs') ++ []
-        = node(n, xs' ++ [])    by expand operator++.
-    ... = node(n, xs')          by replace IH.
-  }
-end
-```
-
-Concepts:
-* [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
-* [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
-* [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
-
-Example:
-```{.deduce^#switch_example}
-theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
-proof
-  arbitrary xs:UIntList
-  assume premise: len(xs) = 0
-  switch xs {
-    case Empty {
-      .
-    }
-    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
-      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
-      conclude false by expand len in len_zero
-    }
-  }
-end
-```
-
-Concepts:
 * `or` formulas
 * `cases`
 * implicit `or` introduction
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 ```{.deduce^#ex_or_commute}
 theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
 proof
   arbitrary P:bool, Q:bool
-  assume pq
+  assume pq: P or Q
   cases pq
   case p {
     conclude Q or P by p
@@ -84,39 +19,8 @@ proof
 end
 ```
 
-```{.deduce^#contains_append}
-theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
-  if contains(xs ++ ys, z)
-  then contains(xs, z) or contains(ys, z)
-proof
-  arbitrary T:type
-  induction List<T>
-  case [] {
-    arbitrary ys:List<T>, z:T
-    expand operator++
-    assume z_in_ys
-    z_in_ys
-  }
-  case node(x, xs') assume IH {
-    arbitrary ys:List<T>, z:T
-    expand operator++ | contains
-    assume prem: x = z or contains(xs' ++ ys, z)
-    show x = z or contains(xs', z) or contains(ys, z)
-    cases prem
-    case: x = z {
-      recall x = z
-    }
-    case z_in_xs_ys {
-      have IH_conc: contains(xs', z) or contains(ys, z) by apply IH to z_in_xs_ys
-      IH_conc
-    }
-  }
-end
-```
-
 Concepts:
 * [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
-* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 Example:
 ```{.deduce^#false_explosion}
@@ -155,6 +59,106 @@ proof
   conclude (not P) and (not Q) by  (recall not P), (recall not Q)
 end
 ```
+
+Concepts:
+* Library of theorems about unsigned integers (`lib/UInt.thm`)
+* [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
+* Marking with `#` symbols to control `replace` and target right-hand side.
+
+Example:
+```{.deduce^#algebra_example}
+theorem algebra_example: all x:UInt. (1 + x)*(2 + x) = x^2 + 3*x + 2
+proof
+  arbitrary x:UInt
+  equations
+        (1 + x)*(2 + x)
+      = (1 + x)*2 + (1 + x)*x  by replace uint_dist_mult_add.
+  ... = 2 + x*2 + x + x^2      by replace uint_dist_mult_add_right.
+  ... = 2 + 2*x + x + x^2      by replace uint_mult_commute[x,2].
+  ... = 2 + #(2 + 1)*x# + x^2  by replace uint_dist_mult_add_right[2,1,x].
+  ... = 3*x + 2 + x^2          by replace uint_add_commute[2,3*x].
+  ... = x^2 + 3*x + 2          by replace uint_add_commute[3*x + 2, x^2].
+end
+```
+
+Concepts:
+* [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
+* [`replace`-`in`](https://jsiek.github.io/deduce/pages/reference.html#replace-in-proof)
+* [`expand`-`in`](https://jsiek.github.io/deduce/pages/reference.html#expand-in-proof)
+
+Example:
+```{.deduce^#switch_example}
+theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
+proof
+  arbitrary xs:UIntList
+  assume premise: len(xs) = 0
+  switch xs {
+    case Empty {
+      .
+    }
+    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
+      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
+      conclude false by expand len in len_zero
+    }
+  }
+end
+```
+
+Concepts:
+* `induction` on lists
+
+Example:
+```{.deduce^#list_append_empty}
+theorem list_append_empty: <U> all xs :List<U>.
+  xs ++ [] = xs
+proof
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    conclude @[]<U> ++ [] = []  by expand operator++.
+  }
+  case node(n, xs') assume IH: xs' ++ [] = xs' {
+    equations
+          node(n, xs') ++ []
+        = node(n, xs' ++ [])    by expand operator++.
+    ... = node(n, xs')          by replace IH.
+  }
+end
+```
+
+Concepts:
+* Practice with `or` and `cases`.
+
+```{.deduce^#contains_append}
+theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
+  if contains(xs ++ ys, z)
+  then contains(xs, z) or contains(ys, z)
+proof
+  arbitrary T:type
+  induction List<T>
+  case [] {
+    arbitrary ys:List<T>, z:T
+    expand operator++
+    assume z_in_ys
+    z_in_ys
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<T>, z:T
+    expand operator++ | contains
+    assume prem: x = z or contains(xs' ++ ys, z)
+    show x = z or contains(xs', z) or contains(ys, z)
+    cases prem
+    case: x = z {
+      recall x = z
+    }
+    case z_in_xs_ys {
+      have IH_conc: contains(xs', z) or contains(ys, z) by apply IH to z_in_xs_ys
+      IH_conc
+    }
+  }
+end
+```
+
 
 Concepts
 * `ex_mid`  law of excluded middle
@@ -203,13 +207,13 @@ import DeduceIntroProof
 import Base
 import List
 
-<<algebra_example>>
-<<switch_example>>
-<<false_explosion>>
-<<list_append_empty>>
 <<ex_or_commute>>
-<<contains_append>>
+<<false_explosion>>
 <<de_morgan_variant>>
+<<algebra_example>>
+<<list_append_empty>>
+<<switch_example>>
+<<contains_append>>
 <<remove_xy>>
 ```
 -->

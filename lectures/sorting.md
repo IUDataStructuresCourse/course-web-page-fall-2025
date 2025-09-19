@@ -1,25 +1,5 @@
 # Lecture: Sorting
 
-
-## Wrap up on proofs of program correctness
-
-Take away points:
-* a computer-checked proof of correctness is the only way to guarantee 100% correctness
-* proofs of correctness take a lot of time
-* testing takes much less time, but no guarantees
-* a deeper understand of logic and proofs of correctness gives you a different
-  perspective when writing code and tests that can help prevent bugs
-
-Historical and Industry Perspective:
-* Proof assistant technology is relatively new (first mature tools in early 2000's)
-  and most of the tools are "expert only" tools.
-* New technologies take time to transfer into industry and even longer
-  to transfer into education.
-* Many large companies (Intel, Facebook, Microsoft) have small teams that
-  prove correctness, but formal methods are not widely used.
-
-## Sorting
-
 ```
 [2,8,7,1,3,5,6,4]
 =>

@@ -5,6 +5,50 @@ import DeduceIntroProof
 import Base
 import List
 
+/* ~/~ begin <<deduce-more-proof.en#ex_or_commute>>[init] */
+theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
+proof
+  arbitrary P:bool, Q:bool
+  assume pq: P or Q
+  cases pq
+  case p {
+    conclude Q or P by p
+  }
+  case q {
+    conclude Q or P by q
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#false_explosion>>[init] */
+theorem false_explosion: if false then 0 = 1
+proof
+  assume: false
+  conclude 0 = 1 by recall false
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#de_morgan_variant>>[init] */
+theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
+proof
+  arbitrary P:bool, Q:bool
+  assume not_pq: not (P or Q)
+
+  have: not P
+  proof
+    assume: P
+    have pq: P or Q   by recall P
+    contradict pq, not_pq    
+  end
+
+  have: not Q
+  proof
+    assume: Q
+    have pq: P or Q   by recall Q
+    contradict pq, not_pq    
+  end
+    
+  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
+end
+/* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#algebra_example>>[init] */
 theorem algebra_example: all x:UInt. (1 + x)*(2 + x) = x^2 + 3*x + 2
 proof
@@ -17,29 +61,6 @@ proof
   ... = 2 + #(2 + 1)*x# + x^2  by replace uint_dist_mult_add_right[2,1,x].
   ... = 3*x + 2 + x^2          by replace uint_add_commute[2,3*x].
   ... = x^2 + 3*x + 2          by replace uint_add_commute[3*x + 2, x^2].
-end
-/* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#switch_example>>[init] */
-theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
-proof
-  arbitrary xs:UIntList
-  assume premise: len(xs) = 0
-  switch xs {
-    case Empty {
-      .
-    }
-    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
-      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
-      conclude false by expand len in len_zero
-    }
-  }
-end
-/* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#false_explosion>>[init] */
-theorem false_explosion: if false then 0 = 1
-proof
-  assume: false
-  conclude 0 = 1 by recall false
 end
 /* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#list_append_empty>>[init] */
@@ -59,17 +80,19 @@ proof
   }
 end
 /* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#ex_or_commute>>[init] */
-theorem ex_or_commute: all P:bool, Q:bool. if (P or Q) then (Q or P)
+/* ~/~ begin <<deduce-more-proof.en#switch_example>>[init] */
+theorem switch_example: all xs:UIntList. if len(xs) = 0 then xs = Empty
 proof
-  arbitrary P:bool, Q:bool
-  assume pq
-  cases pq
-  case p {
-    conclude Q or P by p
-  }
-  case q {
-    conclude Q or P by q
+  arbitrary xs:UIntList
+  assume premise: len(xs) = 0
+  switch xs {
+    case Empty {
+      .
+    }
+    case Node(x, xs') assume xs_node: xs = Node(x, xs') {
+      have len_zero: len(Node(x, xs')) = 0 by replace xs_node in premise
+      conclude false by expand len in len_zero
+    }
   }
 end
 /* ~/~ end */
@@ -102,31 +125,9 @@ proof
   }
 end
 /* ~/~ end */
-/* ~/~ begin <<deduce-more-proof.en#de_morgan_variant>>[init] */
-theorem de_morgan_variant: all P:bool, Q:bool. if not (P or Q) then (not P) and (not Q)
-proof
-  arbitrary P:bool, Q:bool
-  assume not_pq: not (P or Q)
-
-  have: not P
-  proof
-    assume: P
-    have pq: P or Q   by recall P
-    contradict pq, not_pq    
-  end
-
-  have: not Q
-  proof
-    assume: Q
-    have pq: P or Q   by recall Q
-    contradict pq, not_pq    
-  end
-    
-  conclude (not P) and (not Q) by  (recall not P), (recall not Q)
-end
-/* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#remove_xy>>[init] */
-theorem remove_xy: all x:UInt, y:UInt. remove([x], y) = [x] or remove([x],y) = []
+theorem remove_xy: all x:UInt, y:UInt.
+  remove([x], y) = [x] or remove([x],y) = []
 proof
   arbitrary x:UInt, y:UInt
   expand remove

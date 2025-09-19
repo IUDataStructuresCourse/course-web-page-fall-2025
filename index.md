@@ -81,7 +81,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Sep. 10    | [Linked Lists and Abstract Data Types](./lectures/linked-lists.md) | Ch. 3 sec. 1-5                                               | [Homework 1](./HW1.md)                                     |      |
 | Sep. 12    | —                                                            |                                                              | Lab: [Merge Sort](./MergeSort.md)                         | [submit](https://autograder.luddy.indiana.edu/web/project/1786)     |
 | Sep. 15    | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html) |                                                           |      |
-| Sep. 17    | [Sorting: Insertion, Quick](./lectures/sorting.md)           | Ch.7 Sec.2,7                                                 | Homework: about algo. analysis                            |      |
+| Sep. 17    | [Sorting: Insertion, Quick](./lectures/sorting.md)           | Ch.7 Sec.2,7                                                 |                             |      |
 | Sep. 19    | —                                                            |                                                              | Lab: [Linked Lists in Deduce](./LabDeduceProg)            | [submit](https://autograder.luddy.indiana.edu/web/project/1819)     |
 | Sep. 22    | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md) | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html) |                                                           |      |
 | Sep. 24    | [Binary Trees](./lectures/binary-trees.md) and [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch.4 Sec.1,2,3 | Homework: [Deduce Proof Exercise 1](./ProofExercise1.md)  | [submit](https://autograder.luddy.indiana.edu/web/project/2026)     |
@@ -210,6 +210,7 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
     * Introduction to Deduce [video](https://youtu.be/q0OMEPEOe-g).
     * Programming in Deduce [video](https://youtu.be/wH8nh1_1zZU).
     * Writing Proofs in Deduce (Part 1) [video](https://youtu.be/7sZInoabAp0).
+    * Writing Proofs in Deduce (Part 2) [video](https://youtu.be/QLJCrCeB0Zo).    
 
 <!--
 * Extra [exercises](./Exercises.md) in writing proofs in Deduce.
