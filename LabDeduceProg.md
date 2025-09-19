@@ -66,8 +66,7 @@ an instructor can help you get things working.
 ## Problem Set
 
 Complete the following exercises in a file named `LabDeduceProgramming.pf`. 
-Then submit the file to the 
-[autograder](https://autograder.luddy.indiana.edu/web/project/1614). 
+Then submit the file to the autograder. 
 Before submitting, you can also write your own tests using `assert` statements
 for each of the functions you write.
 
