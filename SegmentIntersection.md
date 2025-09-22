@@ -1,3 +1,8 @@
+<!-- This writeup is for the segment intersection project, and out of date.
+See SegmentBST and SegmentAVL for a 2-part project more cleanly split.
+- Calvin
+ -->
+
 # Segment Intersection
 
 **[Note]** This is a group project. Students may work in groups of 3 ~ 4 people, or by themselves.
