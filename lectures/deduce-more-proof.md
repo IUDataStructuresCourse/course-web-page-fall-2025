@@ -127,6 +127,63 @@ end
 ```
 
 Concepts:
+* proving lemmas
+
+```
+theorem ex_take_append: all E:type, xs:List<E>, ys:List<E>.
+  take(xs ++ ys, length(xs)) = xs
+proof
+  arbitrary E:type
+  induction List<E>
+  case empty {
+    arbitrary ys:List<E>
+    expand operator++ | length
+    show take(ys, 0) = []
+    ?
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<E>
+    ?
+  }  
+end
+```
+
+```{.deduce^#ex_take_zero}
+lemma ex_take_zero: all E:type, xs:List<E>.
+  take(xs, 0) = []
+proof
+  arbitrary E:type, xs:List<E>
+  switch xs {
+    case empty {
+      expand take.
+    }
+    case node(x, xs') {
+      expand take.
+    }
+  }
+end
+```
+
+```{.deduce^#ex_take_append}
+theorem ex_take_append: all E:type, xs:List<E>, ys:List<E>.
+  take(xs ++ ys, length(xs)) = xs
+proof
+  arbitrary E:type
+  induction List<E>
+  case empty {
+    arbitrary ys:List<E>
+    expand operator++ | length
+    replace take_zero.
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<E>
+    expand operator++ | take | length
+    replace IH[ys].
+  }  
+end
+```
+
+Concepts:
 * Practice with `or` and `cases`.
 
 ```{.deduce^#contains_append}
@@ -213,6 +270,8 @@ import List
 <<algebra_example>>
 <<list_append_empty>>
 <<switch_example>>
+<<ex_take_zero>>
+<<ex_take_append>>
 <<contains_append>>
 <<remove_xy>>
 ```

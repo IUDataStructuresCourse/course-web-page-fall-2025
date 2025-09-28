@@ -96,6 +96,39 @@ proof
   }
 end
 /* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#ex_take_zero>>[init] */
+lemma ex_take_zero: all E:type, xs:List<E>.
+  take(xs, 0) = []
+proof
+  arbitrary E:type, xs:List<E>
+  switch xs {
+    case empty {
+      expand take.
+    }
+    case node(x, xs') {
+      expand take.
+    }
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-more-proof.en#ex_take_append>>[init] */
+theorem ex_take_append: all E:type, xs:List<E>, ys:List<E>.
+  take(xs ++ ys, length(xs)) = xs
+proof
+  arbitrary E:type
+  induction List<E>
+  case empty {
+    arbitrary ys:List<E>
+    expand operator++ | length
+    replace take_zero.
+  }
+  case node(x, xs') assume IH {
+    arbitrary ys:List<E>
+    expand operator++ | take | length
+    replace IH[ys].
+  }  
+end
+/* ~/~ end */
 /* ~/~ begin <<deduce-more-proof.en#contains_append>>[init] */
 theorem contains_append: <T> all xs:List<T>, ys:List<T>, z:T.
   if contains(xs ++ ys, z)
