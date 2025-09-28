@@ -127,7 +127,7 @@ end
 ```
 
 Concepts:
-* proving lemmas
+* proofs get stuck, proving lemmas to get unstuck
 
 ```
 theorem ex_take_append: all E:type, xs:List<E>, ys:List<E>.
