@@ -74,10 +74,10 @@ proof
         (1 + x)*(2 + x)
       = (1 + x)*2 + (1 + x)*x  by replace uint_dist_mult_add.
   ... = 2 + x*2 + x + x^2      by replace uint_dist_mult_add_right.
-  ... = 2 + 2*x + x + x^2      by replace uint_mult_commute[x,2].
-  ... = 2 + #(2 + 1)*x# + x^2  by replace uint_dist_mult_add_right[2,1,x].
-  ... = 3*x + 2 + x^2          by replace uint_add_commute[2,3*x].
-  ... = x^2 + 3*x + 2          by replace uint_add_commute[3*x + 2, x^2].
+  ... = 2 + #x*(2 + 1)# + x^2  by replace uint_dist_mult_add[x,2,1].
+  ... = x*3 + 2 + x^2          by replace uint_add_commute[2,x*3].
+  ... = x^2 + x*3 + 2          by replace uint_add_commute[x*3 + 2, x^2].
+  ... = x^2 + 3*x + 2          by replace uint_mult_commute[x, 3].
 end
 ```
 
