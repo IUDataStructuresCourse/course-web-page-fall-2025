@@ -210,7 +210,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
     * Introduction to Deduce [video](https://youtu.be/q0OMEPEOe-g).
     * Programming in Deduce [video](https://youtu.be/wH8nh1_1zZU).
     * Writing Proofs in Deduce (Part 1) [video](https://youtu.be/7sZInoabAp0).
-    * Writing Proofs in Deduce (Part 2) [video](https://youtu.be/QLJCrCeB0Zo).      * Writing Proofs in Deduce (Part 3) [video](https://youtu.be/Qau-XLx8DA8).
+    * Writing Proofs in Deduce (Part 2) [video](https://youtu.be/QLJCrCeB0Zo).      
+	* Writing Proofs in Deduce (Part 3) [video](https://youtu.be/Qau-XLx8DA8).
     * Writing Proofs in Deduce (Part 4) [video](https://youtu.be/FjxaUbeW84o).
     * Proof by induction on linked lists in Deduce [video](https://youtu.be/iu20bLIRSOs).
 
