@@ -11,7 +11,6 @@ Topics
     * Deduce: Functions on Linked Lists
     * Deduce Proof Exercises
     * Segment Intersection: BST and AVL
-    * Quick Reverse with Deduce
 * Arrays, array algorithms e.g. search, rotate, Java's ArrayList
 * Half-open ranges
 * Testing, Randomized Testing, Property-based Testing
