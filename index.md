@@ -87,13 +87,13 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Sep. 24    | [Binary Trees](./lectures/binary-trees.md) and [Binary Search Trees (BST)](./lectures/binary-search-trees.md) | Ch.4 Sec.1,2,3 | Homework: [Deduce Proof Exercise 1](./ProofExercise1.md)  | [submit](https://autograder.luddy.indiana.edu/web/project/2026)     |
 | Sep. 26    | —                                                            |                                                              | Project: [Segment Intersection (BST)](./SegmentBST.md)    | [code](https://autograder.luddy.indiana.edu/web/project/2028), [test](https://autograder.luddy.indiana.edu/web/project/2029)     |
 | Sep. 29    | [More Proofs and Induction](./lectures/deduce-more-proof.md) |                                                              |                                                           |      |
-| Oct. 1     | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4                                                 | Homework: [Quick Reverse Correct](./QuickReverse.md)<br>  |      |
+| Oct. 1     | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4                                                 | Homework: [Quick Reverse Correct](./QuickReverse.md)<br>  | [code](https://autograder.luddy.indiana.edu/web/project/1820)    |
 | Oct. 3     | —                                                            |                                                              | Project: [Segment Intersection (AVL)](./SegmentAVL.md)    | [code](https://autograder.luddy.indiana.edu/web/project/1814), [test](https://autograder.luddy.indiana.edu/web/project/1813)      |
 | Oct. 6     | [Review for Midterm Exam](./lectures/midterm-review.md)                                      |                                                              |                                                           |      |
 | Oct. 8     | **Midterm Exam**                                             |                                                              |                                                           |      |
 | Oct. 10    | **Fall Break**                                               |                                                              |                                                           |      |
 | Oct. 13    | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)  |                                                              |                                                           |      |
-| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: [Deduce Proof Exercise 2](./ProofExercise2.md)                         |      |
+| Oct. 15    | [Hash Tables](./lectures/hash-tables.md)                     | Ch. 5 sec. 1,2,3,5,6                                         | Homework: [Deduce Proof Exercise 2](./ProofExercise2.md)                         | [code](https://autograder.luddy.indiana.edu/web/project/2051)     |
 | Oct. 17    | —                                                            |                                                              | Lab: [Hash Table](./LabHashTable.md)                      |      |
 | Oct. 20    | [Heaps and Priority Queues](./lectures/heaps.md)             | Ch. 6 sec. 1-4,9                                             |                                                           |      |
 | Oct. 22    | [Binomial Heaps and Queues](./lectures/binomial-queues.md)   | Ch.6 Sec.8                                                   | Homework: [List Search Correct](./ListSearch.md)          |      |
@@ -210,7 +210,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
     * Introduction to Deduce [video](https://youtu.be/q0OMEPEOe-g).
     * Programming in Deduce [video](https://youtu.be/wH8nh1_1zZU).
     * Writing Proofs in Deduce (Part 1) [video](https://youtu.be/7sZInoabAp0).
-    * Writing Proofs in Deduce (Part 2) [video](https://youtu.be/QLJCrCeB0Zo).      * Writing Proofs in Deduce (Part 3) [video](https://youtu.be/Qau-XLx8DA8).
+    * Writing Proofs in Deduce (Part 2) [video](https://youtu.be/QLJCrCeB0Zo).      
+	* Writing Proofs in Deduce (Part 3) [video](https://youtu.be/Qau-XLx8DA8).
     * Writing Proofs in Deduce (Part 4) [video](https://youtu.be/FjxaUbeW84o).
     * Proof by induction on linked lists in Deduce [video](https://youtu.be/iu20bLIRSOs).
 
