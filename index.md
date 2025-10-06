@@ -126,14 +126,14 @@ Office hours with TAs are in Luddy Hall Room 0121.
 * [Algorithm Analysis Recipes](./lectures/analysis-recipes.md)
 
 * Practice Midterm Exams
-  * 2025 (Spring) [without solutions](./midterm-spring-2025.pdf).
-     and [with solutions](./midterm-spring-2025-soln.pdf)
-  * 2024 [without solutions](./midterm-2024.pdf).
-     and [with solutions](./midterm-2024-solns.pdf)
-  * 2022 [without solutions](./midterm-a-2022-questions.pdf).
-     and [with solutions](./midterm-a-2022.pdf)
-  * 2021 [without solutions](./midterm-2021.pdf).
-     and [with solutions](./midterm-2021-solns.pdf)
+  * 2025 (Spring) [without solutions](./midterm-spring-2025.pdf)
+     and [with solutions](./midterm-spring-2025-soln.pdf).
+  * 2024 [without solutions](./midterm-2024.pdf)
+     and [with solutions](./midterm-2024-solns.pdf).
+  * 2022 [without solutions](./midterm-a-2022-questions.pdf)
+     and [with solutions](./midterm-a-2022.pdf).
+  * 2021 [without solutions](./midterm-2021.pdf)
+     and [with solutions](./midterm-2021-solns.pdf).
 
 * Practice Final Exams
   * 2024 [with solutions](./final-2024-solns.pdf)
