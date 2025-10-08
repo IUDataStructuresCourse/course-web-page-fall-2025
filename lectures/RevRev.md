@@ -23,12 +23,12 @@ proof
   arbitrary U :type
   induction List<U>
   case [] {
-    conclude reverse(reverse(@[]<U>)) = [] by definition reverse
+    conclude reverse(reverse(@[]<U>)) = [] by expand reverse.
   }
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
           reverse(reverse(node(n,ls')))
-        = reverse(reverse(ls') ++ [n])         by definition reverse
+        = reverse(reverse(ls') ++ [n])         by expand reverse.
     ... = node(n,ls')                          by sorry
   }
 end
@@ -45,10 +45,10 @@ and if it were, then we could complete the proof as follows
 ```
     equations
           reverse(reverse(node(n,ls')))
-        = reverse(reverse(ls') ++ [n])         by definition reverse
+        = reverse(reverse(ls') ++ [n])         by expand reverse.
     ... = [n] ++ reverse(reverse(ls'))         by ?
     ... = [n] ++ ls'                           by IH
-    ... = node(n,ls')                          by definition operator++
+    ... = node(n,ls')                          by expand operator++.
 ```
 
 So would could try to prove the following lemma.
@@ -78,11 +78,11 @@ proof
     arbitrary n:U
     equations
           reverse(node(x, ls') ++ [n]) 
-        = reverse(node(x, ls' ++ [n]))     by definition operator++
-    ... = reverse(ls' ++ [n]) ++ [x]       by definition reverse
-    ... = ([n] ++ reverse(ls')) ++ [x]     by rewrite IH[n]
+        = reverse(node(x, ls' ++ [n]))     by expand operator++.
+    ... = reverse(ls' ++ [n]) ++ [x]       by expand reverse.
+    ... = ([n] ++ reverse(ls')) ++ [x]     by replace IH[n].
     ... = [n] ++ reverse(ls') ++ [x]       by append_assoc<U>
-    ... = [n] ++ #reverse(node(x, ls'))#   by definition reverse
+    ... = [n] ++ #reverse(node(x, ls'))#   by expand reverse.
   }
 end
 ```
@@ -105,19 +105,19 @@ proof
     arbitrary ys :List<U>
     equations
           reverse(@[]<U> ++ ys)
-        = reverse(ys)                     by definition operator++
-    ... = # reverse(ys) ++ [] #           by rewrite append_empty<U>[reverse(ys)]
-    ... = # reverse(ys) ++ reverse([]) #  by definition reverse
+        = reverse(ys)                     by expand operator++.
+    ... = # reverse(ys) ++ [] #           by replace append_empty<U>[reverse(ys)].
+    ... = # reverse(ys) ++ reverse([]) #  by expand reverse.
   }
   case node(n, xs') suppose IH {
     arbitrary ys :List<U>
     equations
           reverse(node(n,xs') ++ ys)
-        = reverse(node(n, xs' ++ ys))                by definition operator++
-    ... = reverse(xs' ++ ys) ++ [n]                  by definition reverse
-    ... = (reverse(ys) ++ reverse(xs')) ++ [n]       by rewrite IH[ys]
+        = reverse(node(n, xs' ++ ys))                by expand operator++.
+    ... = reverse(xs' ++ ys) ++ [n]                  by expand reverse.
+    ... = (reverse(ys) ++ reverse(xs')) ++ [n]       by replace IH[ys].
     ... = reverse(ys) ++ (reverse(xs') ++ [n])       by append_assoc<U>[reverse(ys)][reverse(xs'), [n]]
-    ... = # reverse(ys) ++ reverse(node(n,xs')) #    by definition reverse
+    ... = # reverse(ys) ++ reverse(node(n,xs')) #    by expand reverse.
   }
 end
 ```
@@ -132,15 +132,16 @@ proof
   arbitrary U :type
   induction List<U>
   case [] {
-    conclude reverse(reverse(@[]<U>)) = []   by definition reverse
+    conclude reverse(reverse(@[]<U>)) = []   by expand reverse.
   }
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
       reverse(reverse(node(n,ls')))
-          = reverse(reverse(ls') ++ [n])           by definition reverse
+          = reverse(reverse(ls') ++ [n])           by expand reverse.
       ... = reverse([n]) ++ reverse(reverse(ls'))  by rev_append<U>[reverse(ls')][[n]]
-      ... = reverse([n]) ++ ls'                    by rewrite IH
-      ... = node(n,ls')                            by definition {reverse,reverse,operator++}
+      ... = reverse([n]) ++ ls'                    by replace IH.
+      ... = node(n,ls')                            by expand 2*reverse expand operator++
+                                                      expand 2*operator++.
   }
 end
 ```
