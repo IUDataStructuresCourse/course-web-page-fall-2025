@@ -65,7 +65,7 @@ BellmanFord:
 
 rev_rev:
 	cat Revrev.md | sed 's/deduce\^/deduce /' > RevRev.en
-	$(ENTANGLED) tangle 
+	$(ENTANGLED) tangle
 	$(PYTHON) $(DEDUCE_DIR)/deduce.py RevRev.pf --dir $(LIB_DIR)
 
 deduce_programming:

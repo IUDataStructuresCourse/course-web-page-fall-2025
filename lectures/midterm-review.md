@@ -2,17 +2,18 @@
 
 Topics
 
-* Labs and Projects
+* Labs, Projects, Homework
     * Array Search
     * Flood It: time complexity, Java collection classes
 	* Linked Lists with Deduce
-    * Proof Exercises with Deduce
-    * Quick Reverse with Deduce
-    * Mergesort with Iterators 
+    * Homework 1 (textbook, big-O)
+    * Merge Sort with Iterators
+    * Deduce: Functions on Linked Lists
+    * Deduce Proof Exercises
     * Segment Intersection: BST and AVL
 * Arrays, array algorithms e.g. search, rotate, Java's ArrayList
 * Half-open ranges
-* Testing
+* Testing, Randomized Testing, Property-based Testing
 * Math: log, exponent
 * Logic, Proof, and Deduce
 * Linked lists, Functions, Proofs in Deduce
