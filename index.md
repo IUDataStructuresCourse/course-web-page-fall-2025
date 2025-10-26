@@ -34,7 +34,7 @@ Expect at least one quiz per month during lab time.
 
 **Instructors**
 
-* Jeremy Siek (jsiek), office hours Mondays 4-5pm, Wednesdays 11am-noon, in Luddy Room 3014.
+* Jeremy Siek (jsiek), office hours Tuesdays 4-5pm, Wednesdays 11am-noon, in Luddy Room 3014.
 
 **Teaching Assistants**
 
@@ -53,7 +53,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | 1pm     |                   |            |                |             |        |
 | 2pm     | Matei             | Calvin     | Matei          |             |        |
 | 3pm     |                   |            |                |             | Calvin |
-| 4pm     | Jeremy            |            |                |             |        |
+| 4pm     |                   | Jeremy     |                |             |        |
 | 5pm     |                   |            |                |             |        |
 
 
