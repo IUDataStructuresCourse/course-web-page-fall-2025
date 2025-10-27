@@ -34,7 +34,7 @@ Expect at least one quiz per month during lab time.
 
 **Instructors**
 
-* Jeremy Siek (jsiek), office hours Mondays 4-5pm, Wednesdays 11am-noon, in Luddy Room 3014.
+* Jeremy Siek (jsiek), office hours Tuesdays 4-5pm, Wednesdays 11am-noon, in Luddy Room 3014.
 
 **Teaching Assistants**
 
@@ -53,7 +53,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | 1pm     |                   |            |                |             |        |
 | 2pm     | Matei             | Calvin     | Matei          |             |        |
 | 3pm     |                   |            |                |             | Calvin |
-| 4pm     | Jeremy            |            |                |             |        |
+| 4pm     |                   | Jeremy     |                |             |        |
 | 5pm     |                   |            |                |             |        |
 
 
@@ -100,7 +100,8 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Oct. 22    | [Binomial Heaps and Queues](./lectures/binomial-queues.md)   | Ch.6 Sec.8                                                   | Homework: [List Search Correct](./ListSearch.md)          | [code](https://autograder.luddy.indiana.edu/web/project/1821)     |
 | Oct. 24    | —                                                            |                                                              | Lab: [Heap](./Heap.md)                                    |      |
 | Oct. 27    |                                                              |                                                              |                                                           |      |
-| Oct. 29    | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md)  | Ch. 9 sec. 1,3                                               | Homework: Search is O(n) in Deduce                        |      |
+| Oct. 27    | Review Solutions: Quick Rev, Proof Ex. 2      |                                                              |                                                           |      |
+| Oct. 29    | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md)  | Ch. 9 sec. 1,3                                               | Homework: [Search is O(n) in Deduce](./SearchOn.md)                        |  [code](https://autograder.luddy.indiana.edu/web/project/2075)    |
 | Oct. 31    | —                                                            |                                                              | Lab: [Binomial Heaps](./LabBinHeap.md)                    | [code](https://autograder.luddy.indiana.edu/web/project/1799), [test](https://autograder.luddy.indiana.edu/web/project/1806)      |
 | Nov. 3     | [Depth-first Search](./lectures/dfs.md)                      | Ch. 9 sec. 6                                                 |                                                           |      |
 | Nov. 5     | [Shortest Paths](./lectures/shortest-paths.md)               | Ch. 9 sec. 3                                                 | Homework: [Insertion Sort Correct](./LabInsertionSort.md) |      |
