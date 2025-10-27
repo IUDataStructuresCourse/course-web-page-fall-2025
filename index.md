@@ -99,7 +99,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Oct. 20    | [Heaps and Priority Queues](./lectures/heaps.md)             | Ch. 6 sec. 1-4,9                                             |                                                           |      |
 | Oct. 22    | [Binomial Heaps and Queues](./lectures/binomial-queues.md)   | Ch.6 Sec.8                                                   | Homework: [List Search Correct](./ListSearch.md)          | [code](https://autograder.luddy.indiana.edu/web/project/1821)     |
 | Oct. 24    | —                                                            |                                                              | Lab: [Heap](./Heap.md)                                    |      |
-| Oct. 27    |                                                              |                                                              |                                                           |      |
+| Oct. 27    | Review Solutions: Quick Rev, Proof Ex. 2      |                                                              |                                                           |      |
 | Oct. 29    | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md)  | Ch. 9 sec. 1,3                                               | Homework: Search is O(n) in Deduce                        |      |
 | Oct. 31    | —                                                            |                                                              | Lab: Binomial Heaps                                       |      |
 | Nov. 3     | [Depth-first Search](./lectures/dfs.md)                      | Ch. 9 sec. 6                                                 |                                                           |      |
