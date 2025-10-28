@@ -1,11 +1,13 @@
 # Lab: List Search
 
-Prove the following theorem about the `search` provided in the
-following file that you should `import`.
+Prove the following theorem about the `search` function provided in the
+following file:
 
 [Search.pf](./Search.pf)
 
-You will also need to import the following files from Deduce's library.
+You should `import Search` in the file that you submit.
+You will also need to import several files from Deduce's library.
+
 
 ```
 import UInt
@@ -13,6 +15,7 @@ import List
 import Pair
 import Base
 import Option
+import Search
 ```
 
 ```
