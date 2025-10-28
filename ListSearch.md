@@ -16,9 +16,7 @@ import Pair
 import Base
 import Option
 import Search
-```
 
-```
 theorem search_correct: all y: UInt, xs: List<UInt>.
     define front = first(search(xs, y));
     define back = second(search(xs, y));
