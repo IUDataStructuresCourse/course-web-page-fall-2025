@@ -81,7 +81,6 @@ proof
   }
 end
 
-/*
 theorem insert_sorted: all xs:List<UInt>. all x:UInt.
   if sorted(xs) then sorted(insert(xs, x))
 proof
@@ -90,40 +89,48 @@ proof
     arbitrary x:UInt
     suppose _
     conclude sorted(insert(empty,x))
-        by expand {insert, sorted, sorted, all_elements}
+      by expand insert | 2*sorted | set_of.
   }
   case node(y, next) suppose IH {
     arbitrary x:UInt
     suppose s_yn: sorted(node(y,next))
     have s_n: sorted(next) by expand sorted in s_yn
-    have y_next: all_elements(next,λb{(y ≤ b)}) by expand sorted in s_yn
-    suffices sorted(insert(node(y,next),x)) by .
+    have y_le_next: all b:UInt. (if b ∈ set_of(next) then y ≤ b)
+      by expand sorted in s_yn
+    show sorted(insert(node(y,next),x)) 
     switch x ≤ y for insert {
       case true  suppose x_le_y_true {
-        have x_le_y: x ≤ y   by replace x_le_y_true
-        suffices sorted(next)
-             and all_elements(next, λb{y ≤ b})
-             and x ≤ y
-             and all_elements(next, λb{x ≤ b})
-                            by expand {sorted, sorted, all_elements}
-        have x_le_next: all_elements(next, λb{(x ≤ b)})
-          by apply all_elements_implies<UInt>[next][λb{(y ≤ b)}, λb{(x ≤ b)}]
-             to y_next , (arbitrary z:UInt
-                          suppose y_z: y ≤ z
-                          conclude x ≤ z by apply less_equal_trans
-                                            to x_le_y , y_z)
-        s_n, y_next, x_le_y, x_le_next
+        have x_le_y: x ≤ y   by replace x_le_y_true.
+        show sorted(node(x, node(y, next)))
+        expand 2*sorted | set_of
+        show sorted(next) and (all b:UInt. (if b ∈ set_of(next) then y ≤ b))
+             and (all b:UInt. (if (y = b or b ∈ set_of(next)) then x ≤ b))
+        have x_le_y_next: all b:UInt. (if (y = b or b ∈ set_of(next)) then x ≤ b) by {
+          arbitrary b:UInt
+          assume yb_bnext
+          cases yb_bnext
+          case y_b: y = b {
+            show x ≤ b
+            replace symmetric y_b
+            conclude x ≤ y by x_le_y
+          }
+          case b_next: b ∈ set_of(next) {
+            have y_le_b: y ≤ b by apply y_le_next to b_next
+            conclude x ≤ b by apply uint_less_equal_trans to x_le_y, y_le_b
+          }
+        }
+        s_n, y_le_next, x_le_y_next
       }
       case false  suppose x_le_y_false {
         have not_x_le_y: not (x ≤ y)
             by suppose x_le_y replace x_le_y_false in x_le_y
-        have y_l_x: y < x  by apply not_less_equal_iff_greater to not_x_le_y
-        suffices sorted(insert(next, x)) and all_elements(insert(next, x), λb{y ≤ b})
-            by expand {sorted}
+        have y_l_x: y < x  by apply uint_not_less_equal_iff_greater to not_x_le_y
+        expand sorted
+        show sorted(insert(next, x)) and (all b:UInt. (if b ∈ set_of(insert(next, x)) then y ≤ b))
         have s_next_x: sorted(insert(next,x)) by apply IH[x] to s_n
-        have y_le_x: y ≤ x by apply less_implies_less_equal to y_l_x
-        have y_le_next_x: all_elements(insert(next,x),λb{(y ≤ b)})
-            by apply less_equal_insert to y_le_x, y_next
+        have y_le_x: y ≤ x by apply uint_less_implies_less_equal to y_l_x
+        have y_le_next_x: all b:UInt. (if b ∈ set_of(insert(next, x)) then y ≤ b)
+            by apply less_equal_insert[next, x, y] to y_le_x, y_le_next
         s_next_x, y_le_next_x
       }
     }
@@ -137,7 +144,7 @@ proof
   case empty {
     arbitrary y:UInt
     conclude mset_of(insert(empty,y)) = m_one(y) ⨄ mset_of(empty)
-        by expand {insert, mset_of, mset_of}
+        by expand insert | mset_of | mset_of.
   }
   case node(x, xs') suppose IH {
     arbitrary y:UInt
@@ -145,25 +152,24 @@ proof
            = m_one(y) ⨄ mset_of(node(x, xs'))    by .
     switch y ≤ x for insert {
       case true suppose yx_true {
-        expand {mset_of,mset_of}
+        expand 2*mset_of.
       }
       case false suppose yx_false {
-	equations
+        equations
               mset_of(node(x, insert(xs', y)))
-            = m_one(x) ⨄ mset_of(insert(xs', y))          by expand mset_of
-        ... = m_one(x) ⨄ m_one(y) ⨄ mset_of(xs')          by replace IH[y]
+            = m_one(x) ⨄ mset_of(insert(xs', y))          by expand mset_of.
+        ... = m_one(x) ⨄ m_one(y) ⨄ mset_of(xs')          by replace IH[y].
         ... = (m_one(x) ⨄ m_one(y)) ⨄ mset_of(xs')
                 by symmetric m_sum_assoc<UInt>[m_one(x), m_one(y), mset_of(xs')]
         ... = (m_one(y) ⨄ m_one(x)) ⨄ mset_of(xs')
-                by replace m_sum_commutes<UInt>[m_one(x), m_one(y)]
+                by replace m_sum_commutes<UInt>[m_one(x), m_one(y)].
         ... = m_one(y) ⨄ m_one(x) ⨄ mset_of(xs')
                 by m_sum_assoc<UInt>[m_one(y), m_one(x), mset_of(xs')]
-        ... = #m_one(y) ⨄ mset_of(node(x, xs'))#          by expand mset_of
+        ... = #m_one(y) ⨄ mset_of(node(x, xs'))#          by expand mset_of.
       }
     }
   }
 end
-*/
 
 recursive isort(List<UInt>, List<UInt>) -> List<UInt> {
   isort([], ys) = []
