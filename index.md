@@ -119,7 +119,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 | Dec. 8     | Code Review                                                  |                                                              |                                                           |      |
 | Dec. 10    | Review for Final Exam                                        |                                                              |                                                           |      |
 | Dec. 12    | —                                                            |                                                              | Lab: Review for Final Exam                                |      |
-| Dec. 15-19 | **Final Exam Week**                                          |                                                              |                                                           |      |
+| Dec. 15 | **Final Exam: Monday, 8am-10am, in SY 137**                                          |                                                              |                                                           |      |
 
 
 **Resources**
