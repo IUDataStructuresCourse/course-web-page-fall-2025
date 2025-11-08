@@ -66,6 +66,19 @@ Office hours with TAs are in Luddy Hall Room 0121.
 
 [Signup](https://join.slack.com/t/h343datastruc-b0m7918/shared_invite/zt-3aoe8uf3l-Xa8ik1RyD~1SIMi4Z56Afw)
 
+**Assignments, Collaboration, AI, and Office Hours**
+
+You may work together with other students on the assignments.
+
+You may use Artificial Intelligence.
+
+You may come to office hours to get help from Real Intelligence.
+
+You are responsible for learning all of the material. The midterm and
+final exam questions are designed to test whether you learned
+everything from the assignments.
+
+
 **Schedule**
 
 
