@@ -18,8 +18,8 @@ its mapping from keys to values. Here we make use of the `update` and
 `combine` functions from the library `lib/Maps.pf`.
 
 ```
-recursive BST_map(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
-  BST_map(EmptyTree) = @empty_map<Nat,Nat>
+recursive BST_map(Tree<Pair<UInt,UInt>>) -> fn UInt -> Option<UInt> {
+  BST_map(EmptyTree) = @empty_map<UInt,UInt>
   BST_map(TreeNode(L, kv, R)) =
     update(combine(BST_map(L), BST_map(R)), first(kv), just(second(kv)))
 }
@@ -35,7 +35,7 @@ the height of the tree. (`BST_map` is linear in the size of the tree,
 which is much worse.)
 
 ```
-recursive BST_search(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
+recursive BST_search(Tree<Pair<UInt,UInt>>) -> fn UInt -> Option<UInt> {
   FILL ME IN
 }
 ```
@@ -46,7 +46,7 @@ Next we formalize the Binary Search Tree Property.  First we define
 the following auxilliary function that returns all the keys in a tree.
 
 ```
-recursive BST_keys(Tree<Pair<Nat,Nat>>) -> Set<Nat> {
+recursive BST_keys(Tree<Pair<UInt,UInt>>) -> Set<UInt> {
   BST_keys(EmptyTree) = ∅
   BST_keys(TreeNode(L,kv,R)) = single(first(kv)) ∪ BST_keys(L) ∪ BST_keys(R)
 }
@@ -58,11 +58,11 @@ all the keys in the right subtree. Here's a formulation of this as a
 recursive function.
 
 ```
-recursive is_BST(Tree<Pair<Nat,Nat>>) -> bool {
+recursive is_BST(Tree<Pair<UInt,UInt>>) -> bool {
   is_BST(EmptyTree) = true
   is_BST(TreeNode(L, kv, R)) =
-    (all l:Nat. if l ∈ BST_keys(L) then l < first(kv))
-    and (all r:Nat. if r ∈ BST_keys(R) then first(kv) < r)
+    (all l:UInt. if l ∈ BST_keys(L) then l < first(kv))
+    and (all r:UInt. if r ∈ BST_keys(R) then first(kv) < r)
     and is_BST(L) and is_BST(R)
 }
 ```
@@ -72,7 +72,7 @@ recursive is_BST(Tree<Pair<Nat,Nat>>) -> bool {
 Prove the following theorem.
 
 ```
-theorem BST_search_map: all T:Tree<Pair<Nat,Nat>>.
+theorem BST_search_map: all T:Tree<Pair<UInt,UInt>>.
   if is_BST(T) then BST_search(T) = BST_map(T)
 proof
   ?
