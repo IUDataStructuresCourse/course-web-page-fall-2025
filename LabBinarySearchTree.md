@@ -79,6 +79,6 @@ proof
 end
 ```
 
-The file [BinarySearchTreeStarter.pf](./BinarySearchTreeStarter.pf) 
+The file [BinarySearchTree.pf](./BinarySearchTree.pf) 
 includes the above definitions as well as a helpful theorem
 `BST_keys_map_none`.

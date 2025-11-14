@@ -76,3 +76,18 @@ proof
     Lx
   }
 end
+
+
+
+
+// Assignment begins here:
+
+recursive BST_search(Tree<Pair<UInt,UInt>>) -> fn UInt -> Option<UInt> {
+  // FILL ME IN
+}
+
+theorem BST_search_map: all T:Tree<Pair<UInt,UInt>>.
+  if is_BST(T) then BST_search(T) = BST_map(T)
+proof
+  ?
+end
