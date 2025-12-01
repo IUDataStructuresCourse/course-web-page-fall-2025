@@ -82,3 +82,8 @@ end
 The file [BinarySearchTree.pf](./BinarySearchTree.pf) 
 includes the above definitions as well as a helpful theorem
 `BST_keys_map_none`.
+
+Hints
+* use `extensionality` to prove that two functions are equal, and
+* The `uint_trichotomy` theorems says that `x < y or x = y or y < x`
+  for any unsigned integers x and y.
