@@ -84,7 +84,6 @@ includes the above definitions as well as a helpful theorem
 `BST_keys_map_none`.
 
 Hints
-* use `extensionality` to prove that two functions are equal, and
-* The `uint_trichotomy` theorem says that `x < y or x = y or y < x`
-  for any unsigned integers x and y.
+* Use `extensionality` to prove that two functions are equal, and
+* Use the `switch` proof statement with the same conditions as the `if` terms inside `BST_search`.
 * The `uint_less_implies_not_greater` theorem says that `if x < y then not (y < x)`.
