@@ -19,6 +19,33 @@
     * DNA Sequence Alignment
     * 0-1 Knapsack
 
+## Deduce
+
+theorem all T:type, ys:List<T>, xs:List<T>.
+  len(xs ++ ys) = len(xs) + len(ys)
+proof
+  arbitrary T:type, ys:List<T>
+  induction List<T>
+  case [] {
+    show len([] ++ ys) = len([]) + len(ys)
+    expand operator++ | len
+    show len(ys) = len(ys)
+    .
+  }
+  case node(x, xs') assume IH: len(xs' ++ ys) = len(xs') + len(ys) {
+    show len(node(x, xs') ++ ys) = len(node(x, xs')) + len(ys)
+    expand operator++
+    show len(node(x, xs' ++ ys)) = len(node(x, xs')) + len(ys)
+    expand len
+    show 1 + len(xs' ++ ys) = 1 + len(xs') + len(ys)
+    replace IH
+    show 1 + len(xs') + len(ys) = 1 + len(xs') + len(ys)
+    .
+  }
+end
+
+
+
 ## Hash tables
 
 * Dictionary/Map ADT: `get`, `put`, `remove`, `containsKey`
