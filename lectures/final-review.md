@@ -4,6 +4,7 @@
 
 * Hash tables
 * Heaps, Priority Queues
+* Binomial Heaps
 * Graphs
     * Adjacency List, Adjacency Matrix
     * BFS
